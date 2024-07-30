@@ -1,7 +1,5 @@
 import styles from "@/styles/Brands.module.css";
-
 import Link from "next/link";
-
 import fetchService from "@/services/fetchs";
 
 const groupBrandsByLetter = (brands) => {
@@ -16,10 +14,18 @@ const groupBrandsByLetter = (brands) => {
   });
 
   // Преобразуем объект в массив для использования в компоненте
-  return Object.keys(grouped).map((letter) => ({
+  const groupedArray = Object.keys(grouped).map((letter) => ({
     letter,
     brands: grouped[letter],
   }));
+
+  // Сортируем группы и бренды внутри каждой группы
+  groupedArray.sort((a, b) => a.letter.localeCompare(b.letter));
+  groupedArray.forEach((group) => {
+    group.brands.sort((a, b) => a.name.localeCompare(b.name));
+  });
+
+  return groupedArray;
 };
 
 const Brands = async ({ params }) => {

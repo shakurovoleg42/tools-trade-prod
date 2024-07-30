@@ -29,10 +29,14 @@
   margin: 10px;
 }
 
+.card img {
+  margin-bottom: 14px;
+}
+
 .title {
   font-family: "Roboto Bold", sans-serif;
   margin: 0;
-  margin-top: 26.5px;
+  margin-top: 96.5px;
   font-size: 25px;
   line-height: 30.83px;
   text-transform: uppercase;

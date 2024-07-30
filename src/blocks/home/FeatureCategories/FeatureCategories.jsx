@@ -44,8 +44,6 @@ const FeatureCategories = () => {
             <p>Controls, Plcs, & Peripherals</p>
           </div>
         </div>
-      </div>
-      <div className={styles.items}>
         <div className={styles.thirdty}>
           <Image
             src="/safety.png"
@@ -58,6 +56,9 @@ const FeatureCategories = () => {
             <p>Safety</p>
           </div>
         </div>
+      </div>
+      <div className={styles.items}>
+        
         <div className={styles.thirdty}>
           <Image
             src="/meters.png"

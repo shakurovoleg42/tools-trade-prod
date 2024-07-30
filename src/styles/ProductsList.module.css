@@ -36,11 +36,13 @@
 }
 
 .contmg img {
-  min-height: 300px;
+  max-height: 180px;
+  min-height: 160px;
   transform: rotate(-3.53deg);
 }
 
 .title p {
+  display: flex;
   font-family: "Poppins Bold", sans-serif;
   font-size: 29.05px;
   margin: 8px 0 0 0;
@@ -50,6 +52,7 @@
   text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
+  align-items: center;
 }
 
 .wrapper {
@@ -58,12 +61,15 @@
 }
 
 .shortDesc p {
-  height: 60px;
+  display: flex;
+  height: auto;
   font-family: "Poppins Regular", sans-serif;
   font-size: 12.97px;
   line-height: 17.93px;
   text-align: center;
   height: 53.77px;
+  margin: 15px 0 15px 0;
+  align-items: center;
 }
 
 .btn button {
