@@ -1,0 +1,139 @@
+.papper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 400px;
+  gap: 20px;
+  margin-left: 40px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 260px;
+  height: 340.69px;
+  margin-top: 40px;
+}
+
+.pagination {
+  margin-top: 45px;
+  display: flex;
+  justify-content: center;
+}
+
+.contmg {
+  margin: 0;
+  min-width: 228.62px !important;
+  min-height: 201.72px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 17.93px;
+  border: 0.9px solid #000000;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.contmg img {
+  min-height: 300px;
+  transform: rotate(-3.53deg);
+}
+
+.title p {
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 29.05px;
+  margin: 8px 0 0 0;
+  line-height: 33.59px;
+  color: #ecc115;
+  height: 68px;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.shortDesc p {
+  height: 60px;
+  font-family: "Poppins Regular", sans-serif;
+  font-size: 12.97px;
+  line-height: 17.93px;
+  text-align: center;
+  height: 53.77px;
+}
+
+.btn button {
+  margin-top: 12.07px;
+  width: 153.31px;
+  height: 33.17px;
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 18.83px;
+  line-height: 1;
+  border-radius: 8.97px;
+  color: #ecc115;
+  background-color: #000000;
+}
+
+.btn button:hover {
+  transition: 250ms;
+  background-color: #1f1e1e;
+}
+
+.loading {
+  margin-top: 30px;
+  color: #818181;
+  font-size: 43px;
+  font-family: "Poppins Bold", sans-serif;
+}
+
+@media (max-width: 1024px) {
+  .papper {
+    width: auto;
+    grid-template-columns: repeat(2, 1fr);
+    margin: 0;
+  }
+
+  .product {
+    margin-left: 2%;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 576px) {
+  .papper {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-auto-rows: 320px;
+    gap: 0;
+    margin: 0;
+  }
+
+  .contmg {
+    min-width: 120.62px !important;
+    min-height: 81.72px !important;
+  }
+
+  .title p {
+    font-family: "Poppins Bold", sans-serif;
+    font-size: 25.05px;
+    margin: 8px 0 0 0;
+    line-height: 33.59px;
+    color: #ecc115;
+    height: auto;
+  }
+
+  .shortDesc p {
+    height: auto;
+    font-family: "Poppins Regular", sans-serif;
+    font-size: 12.97px;
+  }
+
+  .product {
+    margin-left: 0;
+    display: flex;
+    margin: 0 auto;
+  }
+}

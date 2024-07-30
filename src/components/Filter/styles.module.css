@@ -1,0 +1,80 @@
+.filter {
+  display: flex;
+  flex-direction: column;
+  padding: 19px 24px 21px 25px;
+  border: 1px solid #000000;
+  border-radius: 5px;
+}
+
+.filter label {
+  width: 240px;
+  font-family: "Poppins Regular", sans-serif;
+  font-size: 17.96px;
+  line-height: 20px;
+  color: #000000;
+}
+
+.categories {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.filter input[type="checkbox"] {
+  margin-left: 20px;
+  border-color: #02246a80;
+  width: 15px;
+  height: 15px;
+  accent-color: #000000;
+  display: flex;
+}
+
+.filter button {
+  margin-top: 37px;
+  width: 88px;
+  height: 28px;
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 13px;
+  line-height: 16.09px;
+  border-radius: 4px;
+  color: #ecc115;
+  background-color: #000000;
+  align-self: center;
+}
+
+.filter button:hover {
+  transition: 250ms;
+  background-color: #1f1e1e;
+}
+
+.brands button {
+  margin-top: 0px;
+}
+
+.brands {
+  display: flex;
+  flex-direction: column;
+}
+
+.brands p {
+  text-align: center;
+}
+
+.brandsList {
+  margin-top: 25px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.brandsList a {
+  padding: 10px 0 10px 0;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Poppins Regular", sans-serif;
+  font-size: 18px;
+  line-height: 23px;
+  color: #000000;
+  display: inline;
+}

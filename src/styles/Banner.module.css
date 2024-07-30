@@ -1,0 +1,394 @@
+.container {
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(0deg, #00000066 40%, transparent 100%),
+    url('/banner1.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.bannerContent {
+  display: flex;
+  width: 100%;
+  padding-top: 40px;
+  margin-left: 379px;
+}
+
+.requestForm {
+  height: 438px;
+  max-width: 260px;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 1px solid #ffffff;
+  text-align: center;
+  margin-left: 358px;
+}
+
+.formContainer {
+  padding-left: 5px;
+  padding-right: 5px;
+  width: 100%;
+}
+
+.RequestQuote {
+  font-family: 'Gilroy-Bold ☞', sans-serif;
+  margin-top: 48px;
+  margin-bottom: 25px;
+  width: 100%;
+  max-width: 231px;
+  height: 34px;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  color: #ffffff;
+}
+
+.formControl1,
+.formControl2,
+.formControl3 {
+  width: 100%;
+  max-width: 265px;
+  height: 23px;
+  margin-top: 30px;
+  opacity: 0, 5%;
+  border-bottom: 1px solid #ffffff;
+  outline: none;
+  background-color: inherit;
+  padding-bottom: 7px;
+}
+
+.formControl1::placeholder,
+.formControl2::placeholder,
+.formControl3::placeholder {
+  color: #e4e4e4;
+}
+
+.submit {
+  margin-top: 65px;
+  width: 100%;
+  max-width: 214px;
+  height: 54px;
+  border-radius: 22.54px;
+  background-color: #ecc115;
+  text-align: center;
+  font-size: 1rem;
+  font-family: 'Gilroy-Bold ☞', sans-serif;
+  line-height: 1.5rem;
+  color: #000000;
+}
+
+.iac {
+  width: auto;
+  height: 178px;
+  margin-left: 45px;
+  margin-top: 0px;
+}
+
+.iacText {
+  padding-top: 0px;
+  font-family: 'Noto Sans Balinese Bold', sans-serif;
+  font-size: 52.74px;
+  line-height: 89px;
+  color: #ffffff;
+}
+
+@media (min-width: 1921px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .bannerContent {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  .requestForm {
+    margin-left: 363px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .formControl1,
+  .formControl2,
+  .formControl3 {
+    margin-top: 20px;
+  }
+
+  .submit {
+    margin-top: 40px;
+  }
+
+  .iac {
+    width: 527.3px;
+    margin-left: 100px;
+  }
+
+  .iacText {
+    font-size: 2.7rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 1441px) and (max-width: 1920px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .bannerContent {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  .requestForm {
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+    margin-left: 360px;
+  }
+
+  .formControl1,
+  .formControl2,
+  .formControl3 {
+    margin-top: 20px;
+  }
+
+  .submit {
+    margin-top: 40px;
+  }
+
+  .iac {
+    width: 600px;
+    margin-left: 100px;
+  }
+
+  .iacText {
+    font-size: 2.7rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 1281px) and (max-width: 1440px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .bannerContent {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  .requestForm {
+    margin-left: 45px;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .formControl1,
+  .formControl2,
+  .formControl3 {
+    margin-top: 20px;
+  }
+
+  .submit {
+    margin-top: 40px;
+  }
+
+  .iac {
+    width: 600px;
+    margin-left: 100px;
+  }
+
+  .iacText {
+    font-size: 2.7rem;
+    line-height: 4rem;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .bannerContent {
+    flex-direction: row;
+    align-items: center;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  .requestForm {
+    margin-left: 250px;
+    padding: 20px;
+    width: 100%;
+    max-width: 200px;
+    height: 350px;
+  }
+
+  .RequestQuote {
+    margin-top: 22px;
+    margin-bottom: 25px;
+    width: 100%;
+    max-width: 231px;
+    height: 34px;
+    font-size: 1.1rem;
+    line-height: 2rem;
+    color: #ffffff;
+  }
+
+  .formControl1,
+  .formControl2,
+  .formControl3 {
+    margin-top: 20px;
+  }
+
+  .submit {
+    margin-top: 25px;
+    width: 100%;
+    max-width: auto;
+    height: 44px;
+    font-size: 0.8rem;
+  }
+
+  .iac {
+    margin-left: 80px;
+    width: 455px;
+  }
+
+  .iacText {
+    font-size: 38.74px;
+    line-height: 3rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .bannerContent {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  .requestForm {
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .formControl1,
+  .formControl2,
+  .formControl3 {
+    margin-top: 20px;
+  }
+
+  .submit {
+    margin-top: 40px;
+  }
+
+  .iac {
+    margin-left: 0px;
+  }
+
+  .iacText {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .bannerContent {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  .requestForm {
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .formControl1,
+  .formControl2,
+  .formControl3 {
+    margin-top: 20px;
+  }
+
+  .submit {
+    margin-top: 40px;
+  }
+
+  .iac {
+    margin-left: 0px;
+  }
+
+  .iacText {
+    font-size: 1.7rem;
+    line-height: 2rem;
+  }
+}
+
+@media (max-width: 481px) {
+  .container {
+    height: auto;
+    padding: 20px;
+  }
+
+  .bannerContent {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0px;
+    padding-top: 20px;
+  }
+
+  .requestForm {
+    margin: 20px auto;
+    padding: 20px;
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .formControl1,
+  .formControl2,
+  .formControl3 {
+    margin-top: 20px;
+  }
+
+  .submit {
+    margin-top: 40px;
+  }
+
+  .iac {
+    margin-left: 0px;
+  }
+
+  .iacText {
+    font-size: 1.7rem;
+    line-height: 3rem;
+  }
+}
