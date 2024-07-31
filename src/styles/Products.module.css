@@ -17,8 +17,8 @@
   margin-left: 44px;
 }
 
-.href p {
-  font-family: "Roboto Regular", sans-serif;
+.href h1 {
+  font-family: "Roboto Bold", sans-serif;
   font-size: 14px;
   line-height: 16.8px;
   color: #565656;
@@ -97,7 +97,7 @@
     width: 100%;
   }
 
-  .href p {
+  .href h1 {
     font-size: 12px;
     line-height: 12.8px;
   }

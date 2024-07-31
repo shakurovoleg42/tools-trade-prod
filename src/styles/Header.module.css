@@ -116,11 +116,12 @@
 
 .search {
   display: flex;
-  flex-direction: row;
+  flex-direction: row !important;
 }
 
 .searchResult {
   display: flex;
+  flex-direction: column;
   min-height: 150px;
   width: 600px;
   position: absolute;
@@ -129,6 +130,28 @@
   color: #000000;
   z-index: 3;
   border-radius: 8px;
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.searchResult.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.searchResult.hidden {
+  display: none;
+}
+
+.closeMenuButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 4;
 }
 
 .resultOfSearch {

@@ -37,10 +37,10 @@ const Banner = ({ currentRegion }) => {
           </div>
         </div>
         <div className={styles.iac}>
-          <p className={styles.iacText}>
+          <h1 className={styles.iacText}>
             Industrial Automation<br></br>& Control supplier in{" "}
             {currentRegion.name}
-          </p>
+          </h1>
         </div>
       </div>
     </div>

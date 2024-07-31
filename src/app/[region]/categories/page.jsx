@@ -21,7 +21,7 @@ const Categories = async ({ params }) => {
     <div>
       <link rel="canonical" href={`/${params.region}/categories`} />
       <div className={styles.href}>
-        <p>CATEGORIES</p>
+        <h1>CATEGORIES</h1>
       </div>
       <div className={styles.rowsContainer}>
         <div className={styles.rows}>

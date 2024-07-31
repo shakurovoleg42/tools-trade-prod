@@ -30,7 +30,7 @@ const Products = async ({ params, searchParams }) => {
       <div className={styles.products}>
         <div className={styles.container}>
           <div className={styles.href}>
-            <p>PRODUCTS</p>
+            <h1>PRODUCTS</h1>
           </div>
           <div className={styles.wrapper}>
             <div className={styles.title}>

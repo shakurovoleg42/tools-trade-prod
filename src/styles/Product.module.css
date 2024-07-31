@@ -269,6 +269,7 @@
   line-height: 55.74px;
   text-align: left;
   white-space: nowrap;
+  margin-left: -36px;
 }
 
 .recomendations .block .title p {
@@ -365,10 +366,17 @@
     width: 222px;
   }
 
+  .Title p {
+    margin-left: 50px;
+  }
+
   .similars {
     width: 100%;
+    display: flex;
     margin-top: 20px;
     margin-left: 0;
+    justify-content: center;
+    align-items: center;
   }
 
   .href {

@@ -10,14 +10,14 @@
   margin-top: 83px;
 }
 
-.title p {
+.title h2 {
   font-family: "Poppins Bold", sans-serif;
   font-size: 62px;
   line-height: 93px;
   position: relative;
 }
 
-.title p::after {
+.title h2::after {
   content: "";
   position: absolute;
   left: 0;
@@ -82,14 +82,14 @@
     text-align: left;
   }
 
-  .title p {
+  .title h2 {
     font-size: 48px;
     line-height: 48px;
     line-height: 93px;
     position: relative;
     text-transform: uppercase;
   }
-  .title p::after {
+  .title h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -115,7 +115,7 @@
     text-transform: uppercase;
   }
 
-  .title p {
+  .title h2 {
     font-size: 44px;
     line-height: 93px;
     position: relative;
@@ -137,13 +137,13 @@
     text-align: left;
   }
 
-  .title p {
+  .title h2 {
     font-size: 38px;
     line-height: 48px;
     line-height: 93px;
     position: relative;
   }
-  .title p::after {
+  .title h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -169,7 +169,7 @@
     text-transform: uppercase;
   }
 
-  .title p {
+  .title h2 {
     font-size: 44px;
     line-height: 93px;
     position: relative;
@@ -190,14 +190,14 @@
     text-align: left;
   }
 
-  .title p {
+  .title h2 {
     font-size: 38px;
     line-height: 48px;
     line-height: 93px;
     position: relative;
     text-transform: uppercase;
   }
-  .title p::after {
+  .title h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -223,7 +223,7 @@
     text-transform: uppercase;
   }
 
-  .title p {
+  .title h2 {
     font-size: 44px;
     line-height: 93px;
     position: relative;
@@ -245,13 +245,13 @@
     text-align: left;
   }
 
-  .title p {
+  .title h2 {
     font-size: 38.74px;
     line-height: 3rem;
     position: relative;
     text-transform: uppercase;
   }
-  .title p::after {
+  .title h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -315,7 +315,7 @@
     position: relative;
     text-transform: uppercase;
   }
-  .title p::after {
+  .title h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -341,7 +341,7 @@
     text-transform: uppercase;
   }
 
-  .title p {
+  .title h2 {
     font-size: 44px;
     line-height: 93px;
     position: relative;
@@ -364,7 +364,7 @@
     text-align: left;
   }
 
-  .title p {
+  .title h2 {
     display: inline;
     font-size: 38px;
     line-height: 42px;
@@ -372,7 +372,7 @@
     text-transform: uppercase;
   }
 
-  .title p::after {
+  .title h2::after {
     content: "";
     position: absolute;
     left: 0;
@@ -414,7 +414,7 @@
     text-align: left;
   }
 
-  .title p {
+  .title h2 {
     display: inline;
     font-size: 37px;
     line-height: 41px;
@@ -422,7 +422,7 @@
     text-transform: uppercase;
   }
 
-  .title p::after {
+  .title h2::after {
     content: "";
     position: absolute;
     left: 0;

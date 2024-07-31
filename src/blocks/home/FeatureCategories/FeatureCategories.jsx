@@ -5,7 +5,7 @@ const FeatureCategories = () => {
   return (
     <div className={styles.container}>
       <div className={styles.title}>
-        <p>Featured categories</p>
+        <h2>Featured categories</h2>
       </div>
       <div className={styles.items}>
         <div className={styles.first}>

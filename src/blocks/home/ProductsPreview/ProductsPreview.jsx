@@ -15,7 +15,7 @@ const ProductsPreview = ({ featuredProducts }) => {
   return (
     <div className={styles.products_container}>
       <div className={styles.PR_title}>
-        <p className={styles.PR__title}>Featured products</p>
+        <h2 className={styles.PR__title}>Featured products</h2>
       </div>
       <div className={styles.product_container}>
         {featuredProducts.map((product) => (

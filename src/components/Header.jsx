@@ -3,13 +3,8 @@
 import styles from "@/styles/Header.module.css";
 import "react-modern-drawer/dist/index.css";
 
-import { useState } from "react";
-import {
-  useParams,
-  usePathname,
-  useRouter,
-  useSearchParams,
-} from "next/navigation";
+import { useState, useEffect } from "react";
+import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
@@ -18,14 +13,27 @@ import DrawerComponent from "react-modern-drawer";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [searchResults, setSearchResults] = useState([]);
+  const [query, setQuery] = useState("");
+  
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
   const { region } = useParams();
 
+  useEffect(() => {
+    // Имитация поиска
+    if (query.length > 0) {
+      // Здесь должен быть запрос к серверу или API
+      setSearchResults([/* Результаты поиска */]);
+    } else {
+      setSearchResults([]);
+    }
+  }, [query]);
+
   const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
+    setIsOpen(prevState => !prevState);
   };
 
   const toggleSearch = () => {
@@ -37,7 +45,8 @@ const Header = () => {
 
     const formData = new FormData(event.currentTarget);
     const fields = Object.fromEntries(formData);
-
+    
+    setQuery(fields.query); // Устанавливаем запрос
     params.set("query", fields.query);
     router.replace(`/${region}/search` + "?" + params.toString());
   };
@@ -102,7 +111,7 @@ const Header = () => {
               height={74.51}
               draggable="false"
               className="hidden md:block"
-              alt="Screenshots of the dashboard project showing desktop version"
+              alt="Logo"
             />
             <Image
               src="/logo.svg"
@@ -110,7 +119,7 @@ const Header = () => {
               height={55.51}
               draggable="false"
               className="block md:hidden"
-              alt="Screenshots of the dashboard project showing desktop version"
+              alt="Logo"
             />
           </Link>
         </div>
@@ -141,9 +150,8 @@ const Header = () => {
               width={45}
               height={29}
               draggable="false"
-              className="hidden md:block"
               style={{ display: "inline-block" }}
-              alt="При клике выпадает меню"
+              alt="Search icon"
             />
           </button>
         </div>
@@ -166,45 +174,69 @@ const Header = () => {
           })}
         >
           <div className={styles.search}>
-          <form className={styles.panel} onSubmit={handleSubmit}>
-            <button type="submit">
+            <form className={styles.panel} onSubmit={handleSubmit}>
+              <button type="submit">
+                <Image
+                  src="/search.svg"
+                  width={20}
+                  height={20}
+                  draggable="false"
+                  alt="Search"
+                />
+              </button>
+              <input
+                type="text"
+                name="query"
+                placeholder="What Are You Looking For?"
+                onChange={(e) => setQuery(e.target.value)}
+              />
+            </form>
+            <button className={styles.close} onClick={toggleSearch}>
               <Image
-                src="/search.svg"
-                width={20}
-                height={20}
+                src="/x.svg"
+                width={12}
+                height={12}
                 draggable="false"
-                alt="search on active input"
+                alt="Close search"
               />
             </button>
-            <input
-              type="text"
-              name="query"
-              placeholder="What Are You Looking For?"
-            />
-          </form>
-          <button className={styles.close} onClick={toggleSearch}>
-            <Image
-              src="/x.svg"
-              width={12}
-              height={12}
-              draggable="false"
-              style={{ alignItems: "center" }}
-              alt="to close search input"
-            />
-          </button>
           </div>
-          {/* <div className={styles.searchResult}>
-              <div className={styles.resultOfSearch}>
-                213123132
-                213123123
-              </div>
-          </div> */}
         </div>
         <p className={clsx(styles.phone, { [styles.hidden]: open })}>
           <Link href="tel:+971556305217">+971 55 630 52 17</Link>
         </p>
+        <div
+          className={clsx(styles.searchResult, {
+            [styles.show]: searchResults.length > 0,
+            [styles.hidden]: searchResults.length === 0
+          })}
+        >
+          {searchResults.length > 0 ? (
+            <>
+              <button className={styles.closeMenuButton} onClick={() => setSearchResults([])}>
+                <Image
+                  src="/x.svg"
+                  width={20}
+                  height={20}
+                  draggable="false"
+                  alt="Close results"
+                />
+              </button>
+              <ul>
+                {searchResults.map((result, index) => (
+                  <li key={index}>
+                    <Link href={`/search/${result.id}`}>{result.name}</Link>
+                  </li>
+                ))}
+              </ul>
+            </>
+          ) : (
+            <p>No results found</p>
+          )}
+        </div>
       </div>
     </div>
   );
 };
+
 export default Header;

@@ -51,7 +51,7 @@ const Brands = async ({ params }) => {
       <link rel="canonical" href={`/${params.region}/brands`} />
       <div className={styles.container}>
         <div className={styles.href}>
-          <p>BRANDS</p>
+          <h1>BRANDS</h1>
         </div>
         <div className={styles.Links}>
           {data.map((brandGroup) => (
