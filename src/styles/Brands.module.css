@@ -58,7 +58,7 @@
 .to p:not(:first-child) {
   margin: 0px;
   margin-top: 4.8px;
-  padding-left: 52.38px;
+  padding-right: 52.38px;
 }
 
 .to a {

@@ -165,6 +165,7 @@ const Header = () => {
             [styles.hidden]: !open,
           })}
         >
+          <div className={styles.search}>
           <form className={styles.panel} onSubmit={handleSubmit}>
             <button type="submit">
               <Image
@@ -191,6 +192,13 @@ const Header = () => {
               alt="to close search input"
             />
           </button>
+          </div>
+          {/* <div className={styles.searchResult}>
+              <div className={styles.resultOfSearch}>
+                213123132
+                213123123
+              </div>
+          </div> */}
         </div>
         <p className={clsx(styles.phone, { [styles.hidden]: open })}>
           <Link href="tel:+971556305217">+971 55 630 52 17</Link>

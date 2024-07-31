@@ -111,6 +111,29 @@
   z-index: 999;
   background-color: #000000;
   color: #ffffff;
+  flex-direction: column;
+}
+
+.search {
+  display: flex;
+  flex-direction: row;
+}
+
+.searchResult {
+  display: flex;
+  min-height: 150px;
+  width: 600px;
+  position: absolute;
+  top: 60px;
+  background-color: #c7c7c7;
+  color: #000000;
+  z-index: 3;
+  border-radius: 8px;
+}
+
+.resultOfSearch {
+  padding: 10px;
+  border-radius: 22px;
 }
 
 .hidden {
