@@ -1,42 +1,55 @@
+// 'use client';
 import styles from "./styles.module.css";
-
 import Link from "next/link";
-
 import { Product } from "@/blocks/allProducts/ListProducts";
 import fetchService from "@/services/fetchs";
 
 const Search = async ({ params, searchParams }) => {
   const region = params.region;
-  const data = await fetchService.search(searchParams.query);
+  const query = searchParams.query;
 
-  return (
-    <section>
-      <div className="container">
-        <h1>Results for search {searchParams.query}</h1>
-        <ul className={styles.wrapper}>
-          {data.manufacturers.map((brand) => (
-            <li key={brand.id}>
-              <Link href={`/${region}/brands/${brand.slug}`}>{brand.name}</Link>
-            </li>
-          ))}
-        </ul>
-        <ul className={styles.wrapper}>
-          {data.categories.map((category) => (
-            <li key={category.id}>
-              <Link href={`/${region}/categories/${category.slug}`}>
-                {category.name}
-              </Link>
-            </li>
-          ))}
-        </ul>
-        <div className={styles.wrapper}>
-          {data.products.map((product) => (
-            <Product key={product.id} product={product} />
-          ))}
+  try {
+    const data = await fetchService.search(query);
+
+    if (data.products && Array.isArray(data.products.data)) {
+      console.log("Products array:", data.products.data);
+
+      return (
+        <section>
+          <div className="container">
+            <h1>Results for search {query}</h1>
+            {data.products.data.length > 0 ? (
+              <div className={styles.wrapper}>
+                {data.products.data.map((product) => (
+                    <Product key={product.id} product={product} />
+                ))}
+              </div>
+            ) : (
+              <p>No products found</p>
+            )}
+          </div>
+        </section>
+      );
+    } else {
+      console.error("Products data is not an array:", data.products);
+      return (
+        <section>
+          <div className="container">
+            <p>Error: Products data is not in the expected format.</p>
+          </div>
+        </section>
+      );
+    }
+  } catch (error) {
+    console.error("Search request failed:", error);
+    return (
+      <section>
+        <div className="container">
+          <p>Error loading search results</p>
         </div>
-      </div>
-    </section>
-  );
+      </section>
+    );
+  }
 };
 
 export default Search;
