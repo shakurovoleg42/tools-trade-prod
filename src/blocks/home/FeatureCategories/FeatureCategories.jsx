@@ -1,9 +1,9 @@
-'use client';
+// 'use client';
 import styles from "@/styles/FeaturureCategories.module.css";
 import Image from "next/image";
 import fetchService from "@/services/fetchs";
 import Link from "next/link";
-import { useParams } from "next/navigation";
+// import { useParams } from "next/navigation";
 
 const FeatureCategories = async ({ params }) => {
   // const region = params.region;
@@ -12,7 +12,7 @@ const FeatureCategories = async ({ params }) => {
   // console.log(123);
   // const { region } = useParams();
 
-  const { region } = useParams();
+  // const { region } = useParams();
 
   // const handleShowMore = (slug) => {
   //   window.location.href = `/${region}/categories/accessories`;
