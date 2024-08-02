@@ -8,6 +8,8 @@ const FeatureCategories = async ({ params }) => {
   // const region = params.region;
   // const data = await fetchService.homeCategories();
 
+  // console.log(123);
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
