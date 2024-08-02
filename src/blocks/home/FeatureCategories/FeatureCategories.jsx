@@ -1,14 +1,24 @@
+'use client';
 import styles from "@/styles/FeaturureCategories.module.css";
 import Image from "next/image";
 import fetchService from "@/services/fetchs";
-import { fetchRegionByCode } from "@/utils/regions";
-
+import Link from "next/link";
+import { useParams } from "next/navigation";
 
 const FeatureCategories = async ({ params }) => {
   // const region = params.region;
-  // const data = await fetchService.homeCategories();
+  // const data = await fetchService.homeCategories(params);
 
   // console.log(123);
+  // const { region } = useParams();
+
+  const { region } = useParams();
+
+  // const handleShowMore = (slug) => {
+  //   window.location.href = `/${region}/categories/accessories`;
+  // };
+  
+
 
   return (
     <div className={styles.container}>
@@ -16,7 +26,7 @@ const FeatureCategories = async ({ params }) => {
         <h2>Featured categories</h2>
       </div>
       <div className={styles.items}>
-        <div className={styles.first}>
+        <div className={styles.first} onClick={() => window.location.href = `/${region}/categories/accessories`}>
           <Image
             src="/Accessories.png"
             width={190}
@@ -25,12 +35,12 @@ const FeatureCategories = async ({ params }) => {
             alt="accessories"
           />
           <div className={styles.text}>
-            {/* <Link href={`/${region}/categories/accessories`}></Link> */}
+            {/* <Link href={`/${region}/categories/accessories`}> */}
             <p>Accessories</p>
-            
+            {/* </Link> */}
           </div>
         </div>
-        <div className={styles.second}>
+        <div className={styles.second} onClick={() => window.location.href = `/${region}/categories/communication-modules`}>
           <Image
             src="/Communication_modules.png"
             width={190}
@@ -42,7 +52,7 @@ const FeatureCategories = async ({ params }) => {
             <p>communication Modules</p>
           </div>
         </div>
-        <div className={styles.third}>
+        <div className={styles.third} onClick={() => window.location.href = `/${region}/categories/controls-plcs-peripherals`}>
           <Image
             src="/PLCS.png"
             width={190}
@@ -54,7 +64,7 @@ const FeatureCategories = async ({ params }) => {
             <p>Controls, Plcs, & Peripherals</p>
           </div>
         </div>
-        <div className={styles.thirdty}>
+        <div className={styles.thirdty} onClick={() => window.location.href = `/${region}/categories/safety`}>
           <Image
             src="/safety.png"
             width={190}
@@ -68,7 +78,7 @@ const FeatureCategories = async ({ params }) => {
         </div>
       </div>
       <div className={styles.items}>
-        <div className={styles.thirdty}>
+        <div className={styles.thirdty} onClick={() => window.location.href = `/${region}/categories/meters`}>
           <Image
             src="/meters.png"
             width={190}
@@ -80,7 +90,7 @@ const FeatureCategories = async ({ params }) => {
             <p>Meters</p>
           </div>
         </div>
-        <div className={styles.thirdty}>
+        <div className={styles.thirdty} onClick={() => window.location.href = `/${region}/categories/interface-modules`}>
           <Image
             src="/interface-modules.png"
             width={190}
@@ -92,7 +102,7 @@ const FeatureCategories = async ({ params }) => {
             <p>Interface Modules</p>
           </div>
         </div>
-        <div className={styles.thirdty}>
+        <div className={styles.thirdty} onClick={() => window.location.href = `/${region}/categories/counter-instruments`}>
           <Image
             src="/counters&timers.png"
             width={190}
