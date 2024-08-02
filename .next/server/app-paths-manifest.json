@@ -1,0 +1,21 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/api/big_category/route": "app/api/big_category/route.js",
+  "/api/brands/[slug]/route": "app/api/brands/[slug]/route.js",
+  "/api/brands/route": "app/api/brands/route.js",
+  "/api/categories/[slug]/route": "app/api/categories/[slug]/route.js",
+  "/api/categories/route": "app/api/categories/route.js",
+  "/api/products/[slug]/route": "app/api/products/[slug]/route.js",
+  "/api/products/route": "app/api/products/route.js",
+  "/api/regions/route": "app/api/regions/route.js",
+  "/api/route": "app/api/route.js",
+  "/api/search/route": "app/api/search/route.js",
+  "/[region]/brands/page": "app/[region]/brands/page.js",
+  "/[region]/categories/page": "app/[region]/categories/page.js",
+  "/[region]/page": "app/[region]/page.js",
+  "/[region]/products/page": "app/[region]/products/page.js",
+  "/[region]/search/page": "app/[region]/search/page.js",
+  "/[region]/brands/[slug]/page": "app/[region]/brands/[slug]/page.js",
+  "/[region]/categories/[slug]/page": "app/[region]/categories/[slug]/page.js",
+  "/[region]/products/[slug]/page": "app/[region]/products/[slug]/page.js"
+}

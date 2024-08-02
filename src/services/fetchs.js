@@ -12,7 +12,7 @@ const fetchService = {
   getCategory: async (slug, params) => {
     const res = await axios.get(
       process.env.NEXT_URL + `/api/categories/${slug}`,
-      { params },
+      { params }
     );
     return res.data;
   },
@@ -20,6 +20,15 @@ const fetchService = {
     const res = await axios.get(process.env.NEXT_URL + "/api/big_category");
     return res.data;
   },
+  // homeCategories: async (slug, params) => {
+  //   const res = await axios.get(
+  //     process.env.NEXT_URL + `/api/big_category/${slug}`,
+  //     {
+  //       params,
+  //     }
+  //   );
+  //   return res.data;
+  // },
   getBrands: async () => {
     const res = await axios.get(process.env.NEXT_URL + "/api/brands");
     return res.data;

@@ -1,7 +1,13 @@
 import styles from "@/styles/FeaturureCategories.module.css";
 import Image from "next/image";
+import fetchService from "@/services/fetchs";
+import { fetchRegionByCode } from "@/utils/regions";
 
-const FeatureCategories = () => {
+
+const FeatureCategories = async ({ params }) => {
+  // const region = params.region;
+  // const data = await fetchService.homeCategories();
+
   return (
     <div className={styles.container}>
       <div className={styles.title}>
@@ -17,7 +23,9 @@ const FeatureCategories = () => {
             alt="accessories"
           />
           <div className={styles.text}>
+            {/* <Link href={`/${region}/categories/accessories`}></Link> */}
             <p>Accessories</p>
+            
           </div>
         </div>
         <div className={styles.second}>
@@ -58,7 +66,6 @@ const FeatureCategories = () => {
         </div>
       </div>
       <div className={styles.items}>
-        
         <div className={styles.thirdty}>
           <Image
             src="/meters.png"
