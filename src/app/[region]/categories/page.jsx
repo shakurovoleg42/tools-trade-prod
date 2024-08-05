@@ -34,7 +34,12 @@ const Categories = async ({ params }) => {
                 draggable="false"
                 alt=""
               />
-              <p className={styles.title}>{bcategory.name}</p>
+              <Link
+                href={`/${region}/bcategories/${bcategory.slug}`}
+                className={styles.title}
+              >
+                {bcategory.slug}
+              </Link>
               <ul className={styles.linksList}>
                 {bcategory.categories.map((category) => (
                   <li key={category.id} className={styles.links}>
