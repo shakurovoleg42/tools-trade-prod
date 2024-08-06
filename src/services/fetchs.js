@@ -64,6 +64,11 @@ const fetchService = {
     });
     return res.data;
   },
+
+  sendMail: async (data) => {
+    const res = await axios.post(process.env.NEXT_URL + "/api/contact", data);
+    return res.data;
+  },
 };
 
 export default fetchService;

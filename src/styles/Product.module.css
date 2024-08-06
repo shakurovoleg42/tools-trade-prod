@@ -52,6 +52,9 @@
 .title {
   margin: 0;
   padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
 }
 
 .title h1 {
@@ -61,9 +64,14 @@
   display: inline-block;
   font-style: normal;
   font-size: 86.55px;
-  line-height: 0.7;
+  line-height: 0.9;
   color: #000000;
+  max-width: 100%; /* Ensure the h1 takes up full width of the container */
+  word-break: break-word; /* Break long words */
+  white-space: normal; /* Allow text to wrap */
 }
+
+
 
 .short {
   max-width: 560px;
@@ -362,12 +370,13 @@
   }
 
   .imgContainer img {
-    height: 222px;
-    width: 222px;
+    max-height: 222px !important;
+    max-width: 222px !important;
   }
 
   .Title p {
     margin-left: 50px;
+    flex-wrap: wrap;
   }
 
   .similars {
@@ -454,7 +463,9 @@
   .title h1 {
     margin-top: 20px;
     font-size: 4rem;
-    line-height: 2.5rem;
+    line-height: 0.9;
+
+    flex-wrap: wrap;
   }
 
   .tabs button,

@@ -1,13 +1,49 @@
 "use client";
-
+import axios from 'axios';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { useState } from 'react';
 import styles from "@/styles/Request.module.css";
-
 import { useParams, usePathname } from "next/navigation";
 import Link from "next/link";
 
 const Request = () => {
   const { region } = useParams();
   const pathname = usePathname();
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await axios.post(`${process.env.NEXT_PUBLIC_API}/contact`, formData);
+      toast.success("Thank you for your message!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } catch (error) {
+      toast.error("Error submitting form. Please try again.", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
 
   if (pathname === `/${region}`) {
     return null;
@@ -28,8 +64,7 @@ const Request = () => {
           </div>
           <div className={styles.contactTextSecondContainer}>
             <p className={styles.contactTextSecond}>
-              <strong>Tools & Trade</strong> Shop # 85 Nakheel Center, Deira
-              Dubai
+              <strong>Tools & Trade</strong> Shop # 85 Nakheel Center, Deira Dubai
             </p>
           </div>
           <div className={styles.linkContainer}>
@@ -43,10 +78,13 @@ const Request = () => {
         <div className={styles.requestForm}>
           <div className={styles.formContainer}>
             <p className={styles.RequestQuote}>Request a Quote</p>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className={styles.formGroup}>
                 <input
                   type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
                   className={styles.formControl1}
                   placeholder="Your Name"
                 />
@@ -54,17 +92,24 @@ const Request = () => {
               <div className="form-group" style={{ marginTop: "22.44px" }}>
                 <input
                   type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
                   className={styles.formControl2}
                   placeholder="Email Address"
                 />
               </div>
               <div className={styles.messageInput}>
                 <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
                   className={styles.formControl3}
                   placeholder="Your Message"
                 />
               </div>
               <div style={{ textAlign: "center" }}>
+                <ToastContainer />
                 <button type="submit" className={styles.submit}>
                   SEND INQUIRY
                 </button>
