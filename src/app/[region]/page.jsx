@@ -16,12 +16,13 @@ export async function generateMetadata({ params }) {
 
 const Home = async ({ params }) => {
   const currentRegion = await fetchRegionByCode(params.region);
+  const featuredCategories = await fetchService.getBigCategories();
   const featuredProducts = await fetchService.getFeaturedProducts();
 
   return (
     <>
       <Banner currentRegion={currentRegion} />
-      <FeatureCategories />
+      <FeatureCategories featuredCategories={featuredCategories} />
       <About />
       <ProductsPreview featuredProducts={featuredProducts} />
     </>

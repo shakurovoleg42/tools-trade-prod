@@ -1,24 +1,13 @@
-// 'use client';
+"use client";
+
 import styles from "@/styles/FeaturureCategories.module.css";
+
+import { useParams } from "next/navigation";
 import Image from "next/image";
-import fetchService from "@/services/fetchs";
 import Link from "next/link";
-// import { useParams } from "next/navigation";
 
-const FeatureCategories = async ({ params }) => {
-  // const region = params.region;
-  // const data = await fetchService.homeCategories(params);
-
-  // console.log(123);
-  // const { region } = useParams();
-
-  // const { region } = useParams();
-
-  // const handleShowMore = (slug) => {
-  //   window.location.href = `/${region}/categories/accessories`;
-  // };
-  
-
+const FeatureCategories = ({ featuredCategories }) => {
+  const { region } = useParams();
 
   return (
     <div className={styles.container}>
@@ -26,92 +15,20 @@ const FeatureCategories = async ({ params }) => {
         <h2>Featured categories</h2>
       </div>
       <div className={styles.items}>
-        <div className={styles.first}>
-          <Image
-            src="/Accessories.png"
-            width={190}
-            height={190}
-            draggable="false"
-            alt="accessories"
-          />
-          <div className={styles.text}>
-            <p>Accessories</p>
+        {featuredCategories.map((bcategory) => (
+          <div className={styles.item} key={bcategory.id}>
+            <Image
+              src={bcategory.image}
+              width={190}
+              height={190}
+              draggable="false"
+              alt="accessories"
+            />
+            <Link href={`/${region}/bcategories/${bcategory.slug}`}>
+              {bcategory.name}
+            </Link>
           </div>
-        </div>
-        <div className={styles.second}>
-          <Image
-            src="/Communication_modules.png"
-            width={190}
-            height={190}
-            draggable="false"
-            alt="comm modules"
-          />
-          <div className={styles.text}>
-            <p>communication Modules</p>
-          </div>
-        </div>
-        <div className={styles.third}>
-          <Image
-            src="/PLCS.png"
-            width={190}
-            height={190}
-            draggable="false"
-            alt="PLCS"
-          />
-          <div className={styles.text}>
-            <p>Controls, Plcs, & Peripherals</p>
-          </div>
-        </div>
-        <div className={styles.thirdty}>
-          <Image
-            src="/safety.png"
-            width={190}
-            height={190}
-            draggable="false"
-            alt="safety"
-          />
-          <div className={styles.text}>
-            <p>Safety</p>
-          </div>
-        </div>
-      </div>
-      <div className={styles.items}>
-        <div className={styles.thirdty}>
-          <Image
-            src="/meters.png"
-            width={190}
-            height={190}
-            draggable="false"
-            alt="meters"
-          />
-          <div className={styles.text}>
-            <p>Meters</p>
-          </div>
-        </div>
-        <div className={styles.thirdty}>
-          <Image
-            src="/interface-modules.png"
-            width={190}
-            height={190}
-            draggable="false"
-            alt="accessories"
-          />
-          <div className={styles.text}>
-            <p>Interface Modules</p>
-          </div>
-        </div>
-        <div className={styles.thirdty}>
-          <Image
-            src="/counters&timers.png"
-            width={190}
-            height={190}
-            draggable="false"
-            alt="accessories"
-          />
-          <div className={styles.text}>
-            <p>Counters & Timers</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );

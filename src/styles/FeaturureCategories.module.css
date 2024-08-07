@@ -29,6 +29,8 @@
 
 .items {
   display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
   margin-top: 62px;
   flex-direction: row;
   justify-content: center;
@@ -38,9 +40,8 @@
   text-transform: uppercase;
 }
 
-.first {
-  width: 210px;
-  height: 317px;
+.item img {
+  margin: 0 auto;
 }
 
 .second {

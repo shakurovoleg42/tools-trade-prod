@@ -25,6 +25,8 @@ const BCategory = async ({ params, searchParams }) => {
   });
   const categories = data.categories;
   const brands = data.brands;
+  const products = data.products.data;
+  const pagination = data.pagination;
 
   return (
     <div className={styles.products}>
@@ -39,7 +41,7 @@ const BCategory = async ({ params, searchParams }) => {
           <div className={styles.title}>
             <Filter categories={categories} brands={brands} isBrands />
           </div>
-          {/* <ListProducts products={products} pagination={pagination} /> */}
+          <ListProducts products={products} pagination={pagination} />
         </div>
       </div>
     </div>
