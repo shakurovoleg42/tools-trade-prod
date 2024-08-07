@@ -12,11 +12,11 @@
 /coverage
 
 # next.js
-/.next/
-/out/
+# /.next/
+# /out/
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
@@ -40,5 +40,5 @@ next-env.d.ts
 .env
 .eslintcache
 node_modules
-/.next
-/.next
+# /.next
+# /.next
