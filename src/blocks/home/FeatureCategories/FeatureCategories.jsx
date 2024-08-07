@@ -17,6 +17,7 @@ const FeatureCategories = ({ featuredCategories }) => {
       <div className={styles.items}>
         {featuredCategories.map((bcategory) => (
           <div className={styles.item} key={bcategory.id}>
+            <Link href={`/${region}/bcategories/${bcategory.slug}`}>
             <Image
               src={bcategory.image}
               width={190}
@@ -24,7 +25,7 @@ const FeatureCategories = ({ featuredCategories }) => {
               draggable="false"
               alt="accessories"
             />
-            <Link href={`/${region}/bcategories/${bcategory.slug}`}>
+            
               {bcategory.name}
             </Link>
           </div>

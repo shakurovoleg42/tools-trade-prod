@@ -16,8 +16,8 @@
   "/[region]/page": "app/[region]/page.js",
   "/[region]/products/page": "app/[region]/products/page.js",
   "/[region]/search/page": "app/[region]/search/page.js",
+  "/[region]/bcategories/[slug]/page": "app/[region]/bcategories/[slug]/page.js",
   "/[region]/brands/[slug]/page": "app/[region]/brands/[slug]/page.js",
   "/[region]/categories/[slug]/page": "app/[region]/categories/[slug]/page.js",
-  "/[region]/bcategories/[slug]/page": "app/[region]/bcategories/[slug]/page.js",
   "/[region]/products/[slug]/page": "app/[region]/products/[slug]/page.js"
 }
