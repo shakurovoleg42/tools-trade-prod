@@ -62,7 +62,11 @@ const SimilarProductsSlider = ({ styles, similarProducts }) => {
       ]}
     >
       {similarProducts.map((similarProduct) => (
-        <div key={similarProduct.id} className={styles.block}>
+        <div
+          key={similarProduct.id}
+          className={styles.block}
+          onClick={() => navigateToProduct(similarProduct.slug)}
+        >
           <div className={styles.image}>
             <Image
               src={similarProduct.image || defaultImage}

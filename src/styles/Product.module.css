@@ -50,6 +50,7 @@
 }
 
 .title {
+  display: flex;
   margin: 0;
   padding: 0;
   display: flex;
@@ -66,12 +67,10 @@
   font-size: 86.55px;
   line-height: 0.9;
   color: #000000;
-  max-width: 100%; /* Ensure the h1 takes up full width of the container */
-  word-break: break-word; /* Break long words */
-  white-space: normal; /* Allow text to wrap */
+  max-width: 100%;
+  word-break: break-word;
+  white-space: normal;
 }
-
-
 
 .short {
   max-width: 560px;
@@ -263,12 +262,20 @@
   margin-top: 20px;
   overflow: hidden;
   margin: 20px 20px 0 20px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.block:hover {
+  transition: 250ms;
+  box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1);
 }
 
 .Title {
-  display: inline-block;
+  display: flex;
   width: auto;
   height: auto;
+  text-align: center;
 }
 
 .recomendations .Title p {
@@ -280,6 +287,13 @@
   margin-left: -36px;
 }
 
+.recomendations .block .title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
 .recomendations .block .title p {
   font-family: "Poppins Bold", sans-serif;
   font-size: 29.05px;
@@ -287,6 +301,9 @@
   color: #ecc115;
   text-align: center;
   height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .recomendations .shortDesc p {

@@ -166,32 +166,32 @@ const Header = () => {
           })}
         >
           <div className={styles.search}>
-          <form className={styles.panel} onSubmit={handleSubmit}>
-            <button type="submit">
+            <form className={styles.panel} onSubmit={handleSubmit}>
+              <button type="submit">
+                <Image
+                  src="/search.svg"
+                  width={20}
+                  height={20}
+                  draggable="false"
+                  alt="search on active input"
+                />
+              </button>
+              <input
+                type="text"
+                name="query"
+                placeholder="What Are You Looking For?"
+              />
+            </form>
+            <button className={styles.close} onClick={toggleSearch}>
               <Image
-                src="/search.svg"
-                width={20}
-                height={20}
+                src="/x.svg"
+                width={12}
+                height={12}
                 draggable="false"
-                alt="search on active input"
+                style={{ alignItems: "center" }}
+                alt="to close search input"
               />
             </button>
-            <input
-              type="text"
-              name="query"
-              placeholder="What Are You Looking For?"
-            />
-          </form>
-          <button className={styles.close} onClick={toggleSearch}>
-            <Image
-              src="/x.svg"
-              width={12}
-              height={12}
-              draggable="false"
-              style={{ alignItems: "center" }}
-              alt="to close search input"
-            />
-          </button>
           </div>
           {/* <div className={styles.searchResult}>
               <div className={styles.resultOfSearch}>
