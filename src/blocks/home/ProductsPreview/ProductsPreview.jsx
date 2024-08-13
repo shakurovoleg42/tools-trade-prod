@@ -79,10 +79,10 @@ const ProductsPreview = ({ featuredProducts }) => {
                 onClick={() => handleShowMore(product.slug)}
               >
                 <div className={styles.imageContainer}>
-                  <Image
+                  <img
                     src={product.image}
-                    width={326.38}
-                    height={245.14}
+                    // width={326.38}
+                    // height={245.14}
                     draggable="false"
                     alt="product"
                     style={{
