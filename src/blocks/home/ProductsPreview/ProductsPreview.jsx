@@ -81,14 +81,8 @@ const ProductsPreview = ({ featuredProducts }) => {
                 <div className={styles.imageContainer}>
                   <img
                     src={product.image}
-                    // width={326.38}
-                    // height={245.14}
                     draggable="false"
                     alt="product"
-                    style={{
-                      width: "326.38px !important",
-                      height: "245.14px !important",
-                    }}
                   />
                 </div>
                 <div className={styles.title_product}>

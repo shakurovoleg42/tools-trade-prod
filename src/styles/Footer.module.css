@@ -17,9 +17,9 @@
   flex-direction: row;
 }
 
-.logo {
-  width: auto;
-  height: auto;
+.logo img{
+  width: 264px !important;
+  height: 115px !important;
 }
 
 .listLinks {
@@ -89,6 +89,8 @@
 
   .logo {
     margin-left: 20px;
+    width: 120px !important;
+    height: 75px !important;
   }
 
   .infoBlock {

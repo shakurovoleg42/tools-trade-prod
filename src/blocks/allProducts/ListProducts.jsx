@@ -28,25 +28,11 @@ export const Product = ({ product }) => {
       <div className={styles.contmg}>
         <img
           src={product.image || defaultImage}
-          // width={193.66}
-          // height={193.66}
-          style={{ width: "193.66px !important", height: "193.66px !important" }}
           onClick={handleShowMore}
           draggable="false"
           alt="product"
           onLoad={() => setImageLoaded(true)}
           className={`${!imageLoaded ? "hidden" : ""} hidden md:block`}
-        />
-        <img
-          src={product.image || defaultImage}
-          // width={160.66}
-          // height={160.66}
-          style={{ width: "160.66px !important", height: "160.66px !important" }}
-          onClick={handleShowMore}
-          draggable="false"
-          alt="product"
-          onLoad={() => setImageLoaded(true)}
-          className={`${!imageLoaded ? "block " : ""} block md:hidden`}
         />
       </div>
       <div className={styles.title}>

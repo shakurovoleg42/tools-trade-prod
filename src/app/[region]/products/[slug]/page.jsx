@@ -50,12 +50,7 @@ const Product = async ({ params }) => {
                 <div className={styles.imgContainer}>
                   <img
                     src={product.image || defaultImage}
-                    // width={306.65}
-                    // height={306.65}
-                    style={{
-                      width: "306.65px !important",
-                      height: "306.65px !important",
-                    }}
+                    className="product_image"
                     draggable="false"
                     alt="product image"
                   />

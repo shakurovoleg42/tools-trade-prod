@@ -36,8 +36,10 @@
 }
 
 .contmg img {
-  max-height: 180px;
-  min-height: 160px;
+  max-width: 193.66px !important;
+  min-width: 160px !important;
+  max-height: 193px !important;
+  min-height: 160px !important;
   transform: rotate(-3.53deg);
 }
 

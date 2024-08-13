@@ -42,6 +42,8 @@
 
 .item img {
   margin: 0 auto;
+  max-width: 190 !important;
+  max-height: 190 !important;
 }
 
 .second {

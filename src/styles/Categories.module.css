@@ -19,6 +19,11 @@
   /* align-items: center; */
 }
 
+.bccategory_image {
+  width: 260px !important;
+  height: 260px !important;
+}
+
 .rows {
   max-width: 1524px !important;
   display: flex;

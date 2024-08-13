@@ -20,12 +20,6 @@ const FeatureCategories = ({ featuredCategories }) => {
             <Link href={`/${region}/bcategories/${bcategory.slug}`}>
               <img
                 src={bcategory.image}
-                // width={190}
-                // height={190}
-                style={{
-                  width: "190px !important",
-                  height: "190px !important",
-                }}
                 draggable="false"
                 alt="accessories"
               />

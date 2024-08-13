@@ -31,7 +31,7 @@ const Categories = async ({ params }) => {
                 src={bcategory.image || "/default-image.png"}
                 // width={260}
                 // height={260}
-                style={{ width: "260px !important", height: "260px !important" }}
+                className="bccategory_image"
                 draggable="false"
                 alt=""
               />

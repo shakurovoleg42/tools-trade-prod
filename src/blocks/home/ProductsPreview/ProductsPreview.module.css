@@ -63,8 +63,8 @@
 }
 
 .imageContainer img {
-  max-width: 286.38px !important;
-  max-height: 245.14px !important;
+  width: 286.38px !important;
+  height: 245.14px !important;
 }
 
 .title_product {
