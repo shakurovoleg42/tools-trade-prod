@@ -47,10 +47,11 @@ const Header = () => {
       <div className={styles.header}>
         <div className={styles.burger}>
           <button onClick={toggleDrawer}>
-            <Image
+            <img
               src="/hamburger.svg"
-              width={44}
-              height={44}
+              // width={44}
+              // height={44}
+              style={{ width: "44px !important", height: "44px !important" }}
               draggable="false"
               alt="Burger icon"
             />
@@ -83,10 +84,11 @@ const Header = () => {
               </ul>
             </DrawerComponent>
             <button className={styles.CloseModal} onClick={toggleDrawer}>
-              <Image
+              <img
                 src="/x.svg"
-                width={25}
-                height={25}
+                // width={25}
+                // height={25}
+                style={{ width: "25px !important", height: "25px !important" }}
                 draggable="false"
                 className="hidden md:block"
                 alt="to close modal"
@@ -96,18 +98,20 @@ const Header = () => {
         )}
         <div className={styles.headerLogo}>
           <Link href={`/${region}`}>
-            <Image
+            <img
               src="/logo.svg"
-              width={111.69}
-              height={74.51}
+              // width={111.69}
+              // height={74.51}
+              style={{ width: "111.69px !important", height: "74.51px !important" }}
               draggable="false"
               className="hidden md:block"
               alt="Screenshots of the dashboard project showing desktop version"
             />
-            <Image
+            <img
               src="/logo.svg"
-              width={101.69}
-              height={55.51}
+              // width={101.69}
+              // height={55.51}
+              style={{ width: "101.69px !important", height: "55.51px !important" }}
               draggable="false"
               className="block md:hidden"
               alt="Screenshots of the dashboard project showing desktop version"
@@ -136,22 +140,23 @@ const Header = () => {
             onClick={toggleSearch}
             className={clsx(styles.search_btn, { [styles.hidden]: open })}
           >
-            <Image
+            <img
               src="/search_icon.svg"
-              width={45}
-              height={29}
+              // width={45}
+              // height={29}
+              style={{ width: "45px !important", height: "29px !important", display: "inline-block" }}
               draggable="false"
               className="hidden md:block"
-              style={{ display: "inline-block" }}
               alt="При клике выпадает меню"
             />
           </button>
         </div>
         <div className={clsx(styles.mail, { [styles.hidden]: open })}>
-          <Image
+          <img
             src="/mail_icon.svg"
-            width={20.71}
-            height={15.53}
+            // width={20.71}
+            // height={15.53}
+            style={{ width: "20.71px !important", height: "15.53px !important" }}
             draggable="false"
             alt="Mail Icon"
           />
@@ -168,10 +173,11 @@ const Header = () => {
           <div className={styles.search}>
             <form className={styles.panel} onSubmit={handleSubmit}>
               <button type="submit">
-                <Image
+                <img
                   src="/search.svg"
-                  width={20}
-                  height={20}
+                  // width={20}
+                  // height={20}
+                  style={{ width: "20px !important", height: "20px !important" }}
                   draggable="false"
                   alt="search on active input"
                 />
@@ -183,12 +189,12 @@ const Header = () => {
               />
             </form>
             <button className={styles.close} onClick={toggleSearch}>
-              <Image
+              <img
                 src="/x.svg"
-                width={12}
-                height={12}
+                // width={12}
+                // height={12}
+                style={{ width: "12px !important", height: "12px !important", alignItems: "center"  }}
                 draggable="false"
-                style={{ alignItems: "center" }}
                 alt="to close search input"
               />
             </button>

@@ -27,10 +27,11 @@ const Categories = async ({ params }) => {
         <div className={styles.rows}>
           {data.map((bcategory) => (
             <div key={bcategory.id} className={styles.card}>
-              <Image
+              <img
                 src={bcategory.image || "/default-image.png"}
-                width={260}
-                height={260}
+                // width={260}
+                // height={260}
+                style={{ width: "260px !important", height: "260px !important" }}
                 draggable="false"
                 alt=""
               />

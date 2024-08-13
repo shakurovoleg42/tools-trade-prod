@@ -9,20 +9,22 @@ const Footer = ({ region }) => {
       <div className={styles.footerBox}>
         <div className={styles.logo}>
           <Link href={`/${region}`}>
-            <Image
+            <img
               src="/logo.svg"
-              width={264}
-              height={115}
+              // width={264}
+              // height={115}
+              style={{ width: "264px !important", height: "115px !important" }}
               draggable="false"
               className="hidden md:block"
               alt="Footer logo"
             />
           </Link>
           <Link href={`/${region}`}>
-            <Image
+            <img
               src="/logo.svg"
-              width={120}
-              height={75}
+              // width={120}
+              // height={75}
+              style={{ width: "120px !important", height: "75px !important" }}
               draggable="false"
               className="block md:hidden"
               alt="Footer logo"

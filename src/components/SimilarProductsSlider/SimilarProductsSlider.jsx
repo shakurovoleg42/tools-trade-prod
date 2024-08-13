@@ -68,10 +68,11 @@ const SimilarProductsSlider = ({ styles, similarProducts }) => {
           onClick={() => navigateToProduct(similarProduct.slug)}
         >
           <div className={styles.image}>
-            <Image
+            <img
               src={similarProduct.image || defaultImage}
-              width={193.66}
-              height={193.66}
+              // width={193.66}
+              // height={193.66}
+              style={{ width: "193.66px !important", height: "193.66px !important" }}
               draggable="false"
               alt="similar products"
             />

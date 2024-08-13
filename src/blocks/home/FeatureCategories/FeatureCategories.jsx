@@ -18,14 +18,18 @@ const FeatureCategories = ({ featuredCategories }) => {
         {featuredCategories.map((bcategory) => (
           <div className={styles.item} key={bcategory.id}>
             <Link href={`/${region}/bcategories/${bcategory.slug}`}>
-            <Image
-              src={bcategory.image}
-              width={190}
-              height={190}
-              draggable="false"
-              alt="accessories"
-            />
-            
+              <img
+                src={bcategory.image}
+                // width={190}
+                // height={190}
+                style={{
+                  width: "190px !important",
+                  height: "190px !important",
+                }}
+                draggable="false"
+                alt="accessories"
+              />
+
               {bcategory.name}
             </Link>
           </div>
