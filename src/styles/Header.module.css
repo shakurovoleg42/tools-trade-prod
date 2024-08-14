@@ -21,6 +21,11 @@
   margin: 0 160px 0 0;
 }
 
+.headerLogo img{
+max-width: 111.69px !important;
+max-height: 74.51px !important
+}
+
 .menu {
   display: flex;
   list-style: none;
@@ -86,6 +91,7 @@
 
 .leftMenu {
   background-color: #000000;
+  z-index: 999;
 }
 
 .navigation li {
@@ -96,7 +102,7 @@
 
 .CloseModal {
   margin-left: -30%;
-  z-index: 999;
+  z-index: 9999;
 }
 
 .burger {
@@ -108,7 +114,7 @@
   width: auto;
   padding: 10px 0 10px 0;
   flex-direction: row;
-  z-index: 999;
+  z-index: 1;
   background-color: #000000;
   color: #ffffff;
   flex-direction: column;

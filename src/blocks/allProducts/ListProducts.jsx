@@ -9,7 +9,6 @@ import {
   useRouter,
   useSearchParams,
 } from "next/navigation";
-import Image from "next/image";
 import Pagination from "@mui/material/Pagination";
 import Stack from "@mui/material/Stack";
 

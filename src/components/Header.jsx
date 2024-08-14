@@ -3,14 +3,8 @@
 import styles from "@/styles/Header.module.css";
 import "react-modern-drawer/dist/index.css";
 
-import { useState } from "react";
-import {
-  useParams,
-  usePathname,
-  useRouter,
-  useSearchParams,
-} from "next/navigation";
-import Image from "next/image";
+import { useState, useEffect } from "react";
+import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import clsx from "clsx";
 import DrawerComponent from "react-modern-drawer";
@@ -19,11 +13,19 @@ import { ToastContainer, toast } from "react-toastify";
 const Header = () => {
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState(""); // Добавляем состояние для поиска
   const router = useRouter();
   const searchParams = useSearchParams();
   const params = new URLSearchParams(searchParams);
   const pathname = usePathname();
   const { region } = useParams();
+
+  useEffect(() => {
+    // Очистка поля поиска при переходе на главную страницу
+    if (pathname === `/${region}`) {
+      setSearchValue("");
+    }
+  }, [pathname, region]);
 
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -39,6 +41,7 @@ const Header = () => {
 
     const formData = new FormData(event.currentTarget);
     const fields = Object.fromEntries(formData);
+
     if (!fields.query) {
       toast.error("Can't search empty value", {
         position: "top-right",
@@ -62,7 +65,8 @@ const Header = () => {
         theme: "light",
       });
       params.set("query", fields.query);
-      router.replace(`/${region}/search` + "?" + params.toString());
+      setSearchValue("");
+      router.push(`/${region}/search?${params.toString()}`);
     }
   };
 
@@ -73,8 +77,6 @@ const Header = () => {
           <button onClick={toggleDrawer}>
             <img
               src="/hamburger.svg"
-              // width={44}
-              // height={44}
               style={{ width: "44px !important", height: "44px !important" }}
               draggable="false"
               alt="Burger icon"
@@ -90,18 +92,23 @@ const Header = () => {
               className={styles.leftMenu}
             >
               <ul className={styles.navigation}>
+              <li>
+                  <Link href={`/${region}/`} onClick={toggleDrawer} className="home">
+                    Home
+                  </Link>
+                </li>
                 <li>
-                  <Link href={`/${region}/products`} className="products">
+                  <Link href={`/${region}/products`} onClick={toggleDrawer} className="products">
                     Products
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${region}/categories`} className="categories">
+                  <Link href={`/${region}/categories`} onClick={toggleDrawer} className="categories">
                     Categories
                   </Link>
                 </li>
                 <li>
-                  <Link href={`/${region}/brands`} className="brands">
+                  <Link href={`/${region}/brands`} onClick={toggleDrawer} className="brands">
                     Brands
                   </Link>
                 </li>
@@ -110,8 +117,6 @@ const Header = () => {
             <button className={styles.CloseModal} onClick={toggleDrawer}>
               <img
                 src="/x.svg"
-                // width={25}
-                // height={25}
                 style={{ width: "25px !important", height: "25px !important" }}
                 draggable="false"
                 className="hidden md:block"
@@ -124,24 +129,13 @@ const Header = () => {
           <Link href={`/${region}`}>
             <img
               src="/logo.svg"
-              // width={111.69}
-              // height={74.51}
-              style={{
-                width: "111.69px !important",
-                height: "74.51px !important",
-              }}
               draggable="false"
               className="hidden md:block"
               alt="Screenshots of the dashboard project showing desktop version"
             />
             <img
               src="/logo.svg"
-              // width={101.69}
-              // height={55.51}
-              style={{
-                width: "101.69px !important",
-                height: "55.51px !important",
-              }}
+              style={{ width: "101.69px !important", height: "55.51px !important" }}
               draggable="false"
               className="block md:hidden"
               alt="Screenshots of the dashboard project showing desktop version"
@@ -172,28 +166,17 @@ const Header = () => {
           >
             <img
               src="/search_icon.svg"
-              // width={45}
-              // height={29}
-              style={{
-                width: "45px !important",
-                height: "29px !important",
-                display: "inline-block",
-              }}
+              style={{ width: "45px !important", height: "29px !important", display: "inline-block" }}
               draggable="false"
               className="hidden md:block"
-              alt="При клике выпадает меню"
+              alt="Search icon"
             />
           </button>
         </div>
         <div className={clsx(styles.mail, { [styles.hidden]: open })}>
           <img
             src="/mail_icon.svg"
-            // width={20.71}
-            // height={15.53}
-            style={{
-              width: "20.71px !important",
-              height: "15.53px !important",
-            }}
+            style={{ width: "20.71px !important", height: "15.53px !important" }}
             draggable="false"
             alt="Mail Icon"
           />
@@ -212,43 +195,28 @@ const Header = () => {
               <button type="submit">
                 <img
                   src="/search.svg"
-                  // width={20}
-                  // height={20}
-                  style={{
-                    width: "20px !important",
-                    height: "20px !important",
-                  }}
+                  style={{ width: "20px !important", height: "20px !important" }}
                   draggable="false"
-                  alt="search on active input"
+                  alt="Search icon"
                 />
               </button>
               <input
                 type="text"
                 name="query"
                 placeholder="What Are You Looking For?"
+                value={searchValue} // Привязка значения
+                onChange={(e) => setSearchValue(e.target.value)} // Обработка изменения
               />
             </form>
             <button className={styles.close} onClick={toggleSearch}>
               <img
                 src="/x.svg"
-                // width={12}
-                // height={12}
-                style={{
-                  width: "12px !important",
-                  height: "12px !important",
-                  alignItems: "center",
-                }}
+                style={{ width: "12px !important", height: "12px !important", alignItems: "center" }}
                 draggable="false"
-                alt="to close search input"
+                alt="Close search"
               />
             </button>
           </div>
-          {/* <div className={styles.searchResult}>
-              <div className={styles.resultOfSearch}>
-                213123132
-                213123123
-              </div>
-          </div> */}
         </div>
         <p className={clsx(styles.phone, { [styles.hidden]: open })}>
           <Link href="tel:+971556305217">+971 55 630 52 17</Link>
@@ -257,4 +225,5 @@ const Header = () => {
     </div>
   );
 };
+
 export default Header;
