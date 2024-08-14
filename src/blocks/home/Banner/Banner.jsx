@@ -13,20 +13,31 @@ const Banner = ({ currentRegion }) => {
   });
 
   const handleChange = (e) => {
+    e.preventDefault();
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); // Предотвращаем стандартное поведение формы
+    e.preventDefault();
+    toast.info("Sending...", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     try {
       const res = await axios.post(
         `${process.env.NEXT_PUBLIC_API}/contact`,
         formData
-      );
+      )
       toast.success("Thank you for your message!", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -37,7 +48,7 @@ const Banner = ({ currentRegion }) => {
     } catch (error) {
       toast.error("Error submitting form. Please try again.", {
         position: "top-right",
-        autoClose: 5000,
+        autoClose: 3000,
         hideProgressBar: false,
         closeOnClick: true,
         pauseOnHover: true,
@@ -45,7 +56,6 @@ const Banner = ({ currentRegion }) => {
         progress: undefined,
         theme: "light",
       });
-      console.error("Error submitting form:", error);
     }
   };
 
@@ -86,7 +96,7 @@ const Banner = ({ currentRegion }) => {
                   placeholder="Your Message"
                 />
                 <div style={{ textAlign: "center" }}>
-                  <button type="submit" className={styles.submit}>
+                  <button type="submit" className={styles.submit} onClick={handleSubmit}>
                     SEND INQUIRY
                   </button>
                 </div>

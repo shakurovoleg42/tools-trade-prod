@@ -2,7 +2,7 @@
   width: 100%;
   height: 500px;
   background: linear-gradient(0deg, #00000066 40%, transparent 100%),
-    url('/banner1.jpg');
+    url("/banner1.jpg");
   background-size: cover;
   background-position: center;
   color: #ffffff;
@@ -33,7 +33,7 @@
 }
 
 .RequestQuote {
-  font-family: 'Gilroy-Bold ☞', sans-serif;
+  font-family: "Gilroy-Bold ☞", sans-serif;
   margin-top: 48px;
   margin-bottom: 25px;
   width: 100%;
@@ -49,13 +49,37 @@
 .formControl3 {
   width: 100%;
   max-width: 265px;
-  height: 23px;
+  height: 30px;
   margin-top: 30px;
-  opacity: 0, 5%;
   border-bottom: 1px solid #ffffff;
   outline: none;
-  background-color: inherit;
-  padding-bottom: 7px;
+  background-color: inherit !important;
+  color: #ffffff;
+  padding: 0 5px;
+}
+
+.formControl1:-webkit-autofill,
+.formControl2:-webkit-autofill,
+.formControl3:-webkit-autofill {
+  background-color: inherit !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: #ffffff !important;
+}
+
+.formControl1:-moz-autofill,
+.formControl2:-moz-autofill,
+.formControl3:-moz-autofill {
+  background-color: inherit !important;
+  -moz-background-clip: text !important;
+  -moz-text-fill-color: #ffffff !important;
+}
+
+.formControl1:-ms-autofill,
+.formControl2:-ms-autofill,
+.formControl3:-ms-autofill {
+  background-color: inherit !important;
+  -ms-background-clip: text !important;
+  -ms-text-fill-color: #ffffff !important;
 }
 
 .formControl1::placeholder,
@@ -73,7 +97,7 @@
   background-color: #ecc115;
   text-align: center;
   font-size: 1rem;
-  font-family: 'Gilroy-Bold ☞', sans-serif;
+  font-family: "Gilroy-Bold ☞", sans-serif;
   line-height: 1.5rem;
   color: #000000;
 }
@@ -87,7 +111,7 @@
 
 .iacText {
   padding-top: 0px;
-  font-family: 'Noto Sans Balinese Bold', sans-serif;
+  font-family: "Noto Sans Balinese Bold", sans-serif;
   font-size: 52.74px;
   line-height: 89px;
   color: #ffffff;

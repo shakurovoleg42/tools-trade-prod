@@ -14,6 +14,7 @@ import Image from "next/image";
 import Link from "next/link";
 import clsx from "clsx";
 import DrawerComponent from "react-modern-drawer";
+import { ToastContainer, toast } from "react-toastify";
 
 const Header = () => {
   const [open, setOpen] = useState(false);
@@ -34,12 +35,35 @@ const Header = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    toggleSearch();
 
     const formData = new FormData(event.currentTarget);
     const fields = Object.fromEntries(formData);
-
-    params.set("query", fields.query);
-    router.replace(`/${region}/search` + "?" + params.toString());
+    if (!fields.query) {
+      toast.error("Can't search empty value", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    } else {
+      toast.info("Searching...", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      params.set("query", fields.query);
+      router.replace(`/${region}/search` + "?" + params.toString());
+    }
   };
 
   return (
@@ -102,7 +126,10 @@ const Header = () => {
               src="/logo.svg"
               // width={111.69}
               // height={74.51}
-              style={{ width: "111.69px !important", height: "74.51px !important" }}
+              style={{
+                width: "111.69px !important",
+                height: "74.51px !important",
+              }}
               draggable="false"
               className="hidden md:block"
               alt="Screenshots of the dashboard project showing desktop version"
@@ -111,7 +138,10 @@ const Header = () => {
               src="/logo.svg"
               // width={101.69}
               // height={55.51}
-              style={{ width: "101.69px !important", height: "55.51px !important" }}
+              style={{
+                width: "101.69px !important",
+                height: "55.51px !important",
+              }}
               draggable="false"
               className="block md:hidden"
               alt="Screenshots of the dashboard project showing desktop version"
@@ -144,7 +174,11 @@ const Header = () => {
               src="/search_icon.svg"
               // width={45}
               // height={29}
-              style={{ width: "45px !important", height: "29px !important", display: "inline-block" }}
+              style={{
+                width: "45px !important",
+                height: "29px !important",
+                display: "inline-block",
+              }}
               draggable="false"
               className="hidden md:block"
               alt="При клике выпадает меню"
@@ -156,7 +190,10 @@ const Header = () => {
             src="/mail_icon.svg"
             // width={20.71}
             // height={15.53}
-            style={{ width: "20.71px !important", height: "15.53px !important" }}
+            style={{
+              width: "20.71px !important",
+              height: "15.53px !important",
+            }}
             draggable="false"
             alt="Mail Icon"
           />
@@ -177,7 +214,10 @@ const Header = () => {
                   src="/search.svg"
                   // width={20}
                   // height={20}
-                  style={{ width: "20px !important", height: "20px !important" }}
+                  style={{
+                    width: "20px !important",
+                    height: "20px !important",
+                  }}
                   draggable="false"
                   alt="search on active input"
                 />
@@ -193,7 +233,11 @@ const Header = () => {
                 src="/x.svg"
                 // width={12}
                 // height={12}
-                style={{ width: "12px !important", height: "12px !important", alignItems: "center"  }}
+                style={{
+                  width: "12px !important",
+                  height: "12px !important",
+                  alignItems: "center",
+                }}
                 draggable="false"
                 alt="to close search input"
               />

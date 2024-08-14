@@ -4,6 +4,7 @@ import Banner from "@/blocks/home/Banner/Banner";
 import FeatureCategories from "@/blocks/home/FeatureCategories/FeatureCategories";
 import ProductsPreview from "@/blocks/home/ProductsPreview/ProductsPreview";
 import fetchService from "@/services/fetchs";
+import Head from "next/head";
 
 export async function generateMetadata({ params }) {
   const currentRegion = await fetchRegionByCode(params.region);
@@ -18,9 +19,11 @@ const Home = async ({ params }) => {
   const currentRegion = await fetchRegionByCode(params.region);
   const featuredCategories = await fetchService.getBigCategories();
   const featuredProducts = await fetchService.getFeaturedProducts();
+  const region = params.region;
 
   return (
     <>
+        <link rel="canonical" href={`/${params.region}`} />
       <Banner currentRegion={currentRegion} />
       <FeatureCategories featuredCategories={featuredCategories} />
       <About />

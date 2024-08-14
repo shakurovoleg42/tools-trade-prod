@@ -2,6 +2,7 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import { Product } from "@/blocks/allProducts/ListProducts";
 import fetchService from "@/services/fetchs";
+import Header from "@/components/Header";
 
 const Search = async ({ params, searchParams }) => {
   const region = params.region;
