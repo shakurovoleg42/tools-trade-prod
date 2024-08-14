@@ -30,7 +30,7 @@ const Product = async ({ params }) => {
   return (
     <>
       <div className={styles.container}>
-        <link rel="canonical" href={`/${region}/products/${product.name}`} />
+        <link rel="canonical" href={`/${region}/products/${product.name.toLowerCase()}`} />
         {product && (
           <div className={styles.containerProduct}>
             <div className={styles.href}>
@@ -70,7 +70,9 @@ const Product = async ({ params }) => {
                   </div>
                   <div className={styles.category}>
                     <p className={styles.categoryName}>category:</p>
+                    <Link href={`/${region}/categories/${product.category_slug}`}>
                     <p className={styles.categoryTitle}>{product.category}</p>
+                    </Link>
                   </div>
                   <div className={styles.descProduct}>
                     <h3>
