@@ -2,6 +2,7 @@
 
 import { useParams, useRouter } from "next/navigation";
 import Slider from "react-slick";
+import Image from "next/image";
 
 const SimilarProductsSlider = ({ styles, similarProducts }) => {
   const router = useRouter();

@@ -1,5 +1,6 @@
 import styles from "@/styles/Categories.module.css";
 
+import Image from "next/image";
 import Link from "next/link";
 import fetchService from "@/services/fetchs";
 import { fetchRegionByCode } from "@/utils/regions";

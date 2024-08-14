@@ -1,6 +1,7 @@
 "use client";
 import styles from "@/blocks/home/ProductsPreview/ProductsPreview.module.css";
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";

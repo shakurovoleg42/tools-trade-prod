@@ -51,6 +51,7 @@ max-height: 74.51px !important
 }
 
 .mail {
+  direction: ltr;
   margin-left: 20px;
   display: flex;
   text-decoration: none;

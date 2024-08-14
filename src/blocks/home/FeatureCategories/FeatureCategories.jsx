@@ -3,6 +3,7 @@
 import styles from "@/styles/FeaturureCategories.module.css";
 
 import { useParams } from "next/navigation";
+import Image from "next/image";
 import Link from "next/link";
 
 const FeatureCategories = ({ featuredCategories }) => {

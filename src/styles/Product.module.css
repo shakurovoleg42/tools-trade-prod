@@ -92,6 +92,7 @@
   align-self: start;
   margin-top: 11px;
   flex-direction: column !important;
+  justify-content: flex-start;
 }
 
 .manufacturer p {
@@ -100,6 +101,15 @@
   line-height: 37.5px;
   color: #16366e;
   text-transform: uppercase;
+}
+
+.manufacturer a{
+width: auto;}
+
+.manufacturer span{
+  font-family: "Poppins Bold", sans-serif;
+  font-size: 25px;
+  /* min-width: 0; */
 }
 
 .category {

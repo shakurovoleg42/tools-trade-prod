@@ -44,6 +44,8 @@
 
 .card img {
   margin-bottom: 14px;
+  max-width: 260px !important;
+  max-height: 260px !important;
 }
 
 .title {
