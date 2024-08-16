@@ -26,6 +26,7 @@ const Brand = async ({ params, searchParams }) => {
   // const brandsData = await fetchService.getBrands(
 
   // );
+  
   const categories = data.categories;
   const products = data.products.data;
   const pagination = data.pagination;
