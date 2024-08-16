@@ -24,6 +24,7 @@ const Category = async ({ params, searchParams }) => {
     page: searchParams.page,
   });
   const brands = data.brands;
+  const categories = data.all_categories;
   const products = data.products.data;
   const pagination = data.pagination;
 
@@ -33,14 +34,14 @@ const Category = async ({ params, searchParams }) => {
       <div className={styles.container}>
         <div className={styles.href}>
           <p>
-            <Link href={`/${region}/categories`}>CATEGORIES</Link> /{" "}
+            <Link href={`/${region}/categories`}>CATEGORIES</Link> /
             {data.categories.name}
           </p>
         </div>
         <h1>{data.categories.name}</h1>
         <div className={styles.wrapper}>
           <div className={styles.title}>
-            <Filter brands={brands} />
+            <Filter brands={brands} categories={categories} isBrands={false}/>
           </div>
           <ListProducts products={products} pagination={pagination} />
         </div>
