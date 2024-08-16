@@ -19,6 +19,16 @@ const Request = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    toast.info("Sending...", {
+      position: "top-right",
+      autoClose: 1000,
+      hideProgressBar: true,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
     try {
       const res = await axios.post(`${process.env.NEXT_PUBLIC_API}/contact`, formData);
       toast.success("Thank you for your message!", {
@@ -31,6 +41,11 @@ const Request = () => {
         progress: undefined,
         theme: "light",
       });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+    });
     } catch (error) {
       toast.error("Error submitting form. Please try again.", {
         position: "top-right",

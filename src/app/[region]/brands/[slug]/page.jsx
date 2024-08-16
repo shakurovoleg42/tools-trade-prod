@@ -29,12 +29,14 @@ const Brand = async ({ params, searchParams }) => {
 
   return (
     <div className={styles.products}>
+    <link rel="canonical" href={`/${region}/products/${data.brands.name.toLowerCase()}`} />
       <div className={styles.container}>
         <div className={styles.href}>
           <p>
             <Link href={`/${region}/brands`}>BRANDS</Link> / {data.brands.name}
           </p>
         </div>
+        <h1>{data.brands.name}</h1>
         <div className={styles.wrapper}>
           <div className={styles.title}>
             <Filter categories={categories} isBrands={true} />

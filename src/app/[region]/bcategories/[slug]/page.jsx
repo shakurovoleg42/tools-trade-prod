@@ -18,6 +18,8 @@ export const generateMetadata = async ({ params }) => {
 };
 
 const BCategory = async ({ params, searchParams }) => {
+
+  
   const region = params.region;
 
   const data = await fetchService.getBigCategory(params.slug, {

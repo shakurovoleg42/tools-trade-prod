@@ -45,6 +45,11 @@ const Banner = ({ currentRegion }) => {
         progress: undefined,
         theme: "light",
       });
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+    });
     } catch (error) {
       toast.error("Error submitting form. Please try again.", {
         position: "top-right",

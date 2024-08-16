@@ -16,6 +16,7 @@ export async function generateMetadata({ params }) {
 const Categories = async ({ params }) => {
   const region = params.region;
   const data = await fetchService.getBigCategories();
+  console.log(data);
 
   return (
     <div>
