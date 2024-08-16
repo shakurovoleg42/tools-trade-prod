@@ -19,14 +19,13 @@ export const generateMetadata = async ({ params }) => {
 
 const BCategory = async ({ params, searchParams }) => {
 
-  
   const region = params.region;
 
   const data = await fetchService.getBigCategory(params.slug, {
     page: searchParams.page,
   });
   const categories = data.categories;
-  const brands = data.brands;
+  const brands = data.brands.map(brand => ({ ...brand, name: brand.name }));
   const products = data.products.data;
   const pagination = data.pagination;
 

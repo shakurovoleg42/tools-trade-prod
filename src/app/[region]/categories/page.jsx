@@ -13,10 +13,17 @@ export async function generateMetadata({ params }) {
   };
 }
 
+
+
 const Categories = async ({ params }) => {
   const region = params.region;
   const data = await fetchService.getBigCategories();
   console.log(data);
+
+  const capitalize = (str) => {
+    if (!str) return "";
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
 
   return (
     <div>
@@ -40,7 +47,7 @@ const Categories = async ({ params }) => {
                 href={`/${region}/bcategories/${bcategory.slug}`}
                 className={styles.title}
               >
-                {bcategory.slug}
+                {capitalize(bcategory.slug)}
               </Link>
               <ul className={styles.linksList}>
                 {bcategory.categories.map((category) => (

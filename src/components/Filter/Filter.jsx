@@ -10,7 +10,10 @@ import {
   useSearchParams,
 } from "next/navigation";
 import Link from "next/link";
-
+const capitalize = (str) => {
+  if (!str) return "";
+  return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+};
 const Filter = ({ categories = [], brands = [], isBrands = false }) => {
   const [visibleCategoriesCount, setVisibleCategoriesCount] = useState(10);
   const [visibleBrandsCount, setVisibleBrandsCount] = useState(10);
@@ -121,7 +124,7 @@ const Filter = ({ categories = [], brands = [], isBrands = false }) => {
                 href={`/${region}/brands/${brand.slug}`}
                 data-brand={`brand${brand.id}`}
               >
-                {brand.name}
+                {capitalize(brand.name)}
               </Link>
             ))}
             {visibleBrandsCount < brands.length && (
