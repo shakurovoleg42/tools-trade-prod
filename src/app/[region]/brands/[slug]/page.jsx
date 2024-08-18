@@ -22,6 +22,7 @@ const Brand = async ({ params, searchParams }) => {
 
   const data = await fetchService.getBrand(params.slug, {
     page: searchParams.page,
+    cats: searchParams.cats,
   });
   // const brandsData = await fetchService.getBrands(
 
@@ -43,7 +44,7 @@ const Brand = async ({ params, searchParams }) => {
         <h1>{data.brands.name}</h1>
         <div className={styles.wrapper}>
           <div className={styles.title}>
-            <Filter categories={categories} isBrands={true} />
+            <Filter categories={categories} />
           </div>
           <ListProducts products={products} pagination={pagination} />
         </div>
