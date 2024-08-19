@@ -30,8 +30,6 @@ const formatURL = (str) => {
     .replace(/^-+|-+$/g, ""); // Remove hyphens from the start and end
 };
 
-
-
 const Product = async ({ params }) => {
   const region = params.region;
   const currentRegion = await fetchRegionByCode(region);

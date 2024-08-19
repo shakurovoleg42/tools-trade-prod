@@ -7,6 +7,16 @@ import fetchService from "@/services/fetchs";
 import ListProducts from "@/blocks/allProducts/ListProducts";
 import Filter from "@/components/Filter/Filter";
 
+const formatURL = (str) => {
+  return str
+    .toLowerCase() // Convert to lower case
+    .replace(/[^\w\s.-]/g, "") // Remove all non-word characters except hyphens, spaces, and dots
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/\./g, "-") // Replace dots with hyphens
+    .replace(/-+/g, "-") // Replace multiple consecutive hyphens with a single hyphen
+    .replace(/^-+|-+$/g, ""); // Remove hyphens from the start and end
+};
+
 export const generateMetadata = async ({ params }) => {
   const currentRegion = await fetchRegionByCode(params.region);
   const brand = await fetchService.getBrand(params.slug);
@@ -31,10 +41,11 @@ const Brand = async ({ params, searchParams }) => {
   const categories = data.categories;
   const products = data.products.data;
   const pagination = data.pagination;
+  const formattedTitle = formatURL(data.brands.name);
 
   return (
     <div className={styles.products}>
-    <link rel="canonical" href={`/${region}/products/${data.brands.name.toLowerCase()}`} />
+    <link rel="canonical" href={`/${region}/products/${formattedTitle}`} />
       <div className={styles.container}>
         <div className={styles.href}>
           <p>
