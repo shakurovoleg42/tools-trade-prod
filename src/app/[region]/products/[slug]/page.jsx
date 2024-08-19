@@ -20,17 +20,30 @@ export const generateMetadata = async ({ params }) => {
   };
 };
 
+const formatURL = (str) => {
+  return str
+    .toLowerCase()
+    .replace(/[^\w\s-]/g, "")
+    .replace(/\s+/g, "-")
+    .replace(/-+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
+
+
 const Product = async ({ params }) => {
   const region = params.region;
   const currentRegion = await fetchRegionByCode(region);
   const product = await fetchService.getProduct(params.slug);
+  const formattedTitle = formatURL(product.name);
+
 
   const defaultImage = "/default-image.png";
 
   return (
     <>
       <div className={styles.container}>
-        <link rel="canonical" href={`/${region}/products/${product.name.toLowerCase()}`} />
+        <link rel="canonical" href={`/${region}/products/${formattedTitle}`} />
         {product && (
           <div className={styles.containerProduct}>
             <div className={styles.href}>
