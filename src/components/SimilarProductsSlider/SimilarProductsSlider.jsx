@@ -78,6 +78,7 @@ const SimilarProductsSlider = ({ styles, similarProducts }) => {
             <p>{similarProduct.name}</p>
           </div>
           <div className={styles.shortDesc}>
+            <b>Description</b>
             <p>{similarProduct.short_description}</p>
           </div>
           <div className={styles.btn}>

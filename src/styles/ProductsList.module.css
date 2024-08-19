@@ -2,8 +2,9 @@
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 460px;
-  gap: 20px;
+  gap: 40px;
   margin-left: 40px;
+  margin-bottom: 50px;
 }
 
 .product {
@@ -12,8 +13,9 @@
   justify-content: center;
   align-items: center;
   width: 260px;
-  height: 340.69px;
+  height: 420.69px;
   margin-top: 60px;
+  margin-bottom: 30px;
 }
 
 .pagination {
@@ -47,30 +49,30 @@
   display: inline-block; /* Убедитесь, что контейнер не занимает всю ширину */
   min-height: 90px !important; /* Задаем минимальную высоту */
   margin-top: 18px; /* Отступ сверху */
+  display:flex !important;
+  align-items: center !important;
 }
 
 .title p {
   font-family: "Noto Sans Balinese Bold", sans-serif;
   font-size: 29.55px;
-  line-height: 23.64px;
-  position: relative; /* Позволяет псевдоэлементу быть позиционированным относительно этого элемента */
-  text-align: center; /* Центрируем текст */
-
-  /* Добавлено для переноса текста */
-  word-wrap: break-word; /* Поддержка старых браузеров */
-  overflow-wrap: break-word; /* Поддержка современных браузеров */
-  word-break: break-word; /* Поддержка длинных слов */
+  line-height: 35.64px;
+  position: relative;
+  text-align: center;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .title p::after {
   content: "";
   position: absolute;
-  left: 50%; /* Позиционируем линию по центру */
-  bottom: -12.82px; /* Располагаем линию под текстом */
-  width: 101.05px; /* Ширина линии */
-  height: 5.13px; /* Высота линии */
-  background-color: #ffcd11; /* Цвет линии */
-  transform: translateX(-50%); /* Центрируем линию горизонтально */
+  left: 50%;
+  bottom: -12.82px;
+  width: 101.05px;
+  height: 5.13px;
+  background-color: #ffcd11;
+  transform: translateX(-50%);
 }
 
 
@@ -80,22 +82,25 @@
 }
 
 .shortDesc {
+  position: relative; /* Создает контекст для позиционирования псевдоэлемента */
   width: 228px;
   min-height: 90px !important;
   margin-bottom: 22px;
-  margin-left: 15px;
+  margin-top: 15px;
+  /* margin-left: 25px; */
 }
 
 .shortDesc p {
+  position: relative; /* Позволяет псевдоэлементу быть позиционированным относительно этого элемента */
   display: flex;
   height: auto;
   font-family: "Poppins Regular", sans-serif;
   font-size: 12.97px;
   line-height: 17.93px;
   text-align: left;
-  /* height: 53.77px; */
-  /* margin: 15px 0 15px 0; */
   color: #000000;
+  max-width: 228px;
+  /* margin-left: 10px; */
 }
 
 .btn button {
