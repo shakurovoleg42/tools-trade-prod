@@ -39,6 +39,7 @@ export const Product = ({ product }) => {
         <p>{product.name}</p>
       </div>
       <div className={styles.shortDesc}>
+        <b>Description</b>
         <p>{product.short_description || '*No description*'}</p>
       </div>
       <div className={styles.btn}>
