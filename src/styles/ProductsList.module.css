@@ -43,34 +43,36 @@
   transform: rotate(-3.53deg);
 }
 .title {
-  position: relative; /* Create positioning context for ::after */
-  display: inline-block; /* Ensure container is not full-width */
-  min-height: 90px !important;
-  margin-top: 18px;
+  position: relative; /* Создает контекст для позиционирования псевдоэлемента */
+  display: inline-block; /* Убедитесь, что контейнер не занимает всю ширину */
+  min-height: 90px !important; /* Задаем минимальную высоту */
+  margin-top: 18px; /* Отступ сверху */
 }
 
 .title p {
   font-family: "Noto Sans Balinese Bold", sans-serif;
   font-size: 29.55px;
   line-height: 23.64px;
-  position: relative;
-  text-align: center;
+  position: relative; /* Позволяет псевдоэлементу быть позиционированным относительно этого элемента */
+  text-align: center; /* Центрируем текст */
 
-  /* Added for text wrapping */
-  word-wrap: break-word; /* IE 5.5+ and Safari 1.1+ */
-  overflow-wrap: break-word; /* CSS3, used in modern browsers */
-  word-break: break-word; /* Support for long words breaking */
+  /* Добавлено для переноса текста */
+  word-wrap: break-word; /* Поддержка старых браузеров */
+  overflow-wrap: break-word; /* Поддержка современных браузеров */
+  word-break: break-word; /* Поддержка длинных слов */
 }
 
 .title p::after {
   content: "";
   position: absolute;
-  left: 25%;
-  bottom: -12.82px;
-  width: 101.05px;
-  height: 5.13px;
-  background-color: #ffcd11;
+  left: 50%; /* Позиционируем линию по центру */
+  bottom: -12.82px; /* Располагаем линию под текстом */
+  width: 101.05px; /* Ширина линии */
+  height: 5.13px; /* Высота линии */
+  background-color: #ffcd11; /* Цвет линии */
+  transform: translateX(-50%); /* Центрируем линию горизонтально */
 }
+
 
 .wrapper {
   display: flex;
