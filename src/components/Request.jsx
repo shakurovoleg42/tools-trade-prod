@@ -41,11 +41,12 @@ const Request = () => {
         progress: undefined,
         theme: "light",
       });
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-    });
+    //   setFormData({
+    //     name: "",
+    //     email: "",
+    //     message: "",
+    // });
+    console.log(res);
     } catch (error) {
       toast.error("Error submitting form. Please try again.", {
         position: "top-right",
@@ -57,6 +58,7 @@ const Request = () => {
         progress: undefined,
         theme: "light",
       });
+      console.log(error);
     }
   };
 

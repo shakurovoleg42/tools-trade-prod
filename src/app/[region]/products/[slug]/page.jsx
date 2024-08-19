@@ -37,11 +37,11 @@ const Product = async ({ params }) => {
               <p>
                 <Link href={`/${region}/categories/${product.category_slug}`}>
                   {product.category}
-                </Link>{" "}
-                /{" "}
+                </Link>
+                /
                 <Link href={`/${region}/brands/${product.brand_slug}`}>
                   {product.brand}
-                </Link>{" "}
+                </Link>
                 / {product.name}
               </p>
             </div>

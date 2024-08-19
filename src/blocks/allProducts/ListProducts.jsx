@@ -39,7 +39,7 @@ export const Product = ({ product }) => {
         <p>{product.name}</p>
       </div>
       <div className={styles.shortDesc}>
-        <p>{product.short_description}</p>
+        <p>{product.short_description || '*No description*'}</p>
       </div>
       <div className={styles.btn}>
         <button onClick={handleShowMore}>MORE</button>

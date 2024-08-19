@@ -49,7 +49,10 @@ const Banner = ({ currentRegion }) => {
         name: "",
         email: "",
         message: "",
+        
     });
+    console.log(res);
+
     } catch (error) {
       toast.error("Error submitting form. Please try again.", {
         position: "top-right",
