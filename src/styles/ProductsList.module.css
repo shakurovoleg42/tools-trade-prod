@@ -82,6 +82,8 @@
 .shortDesc {
   width: 228px;
   min-height: 90px !important;
+  margin-bottom: 22px;
+  margin-left: 15px;
 }
 
 .shortDesc p {
