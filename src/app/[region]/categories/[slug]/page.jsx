@@ -46,7 +46,7 @@ const Category = async ({ params, searchParams }) => {
 
   return (
     <div className={styles.products}>
-    <link rel="canonical" href={`/${region}/products/${formattedTitle}`} />
+    <link rel="canonical" href={`/${region}/categories/${formattedTitle}`} />
       <div className={styles.container}>
         <div className={styles.href}>
           <p>
