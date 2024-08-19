@@ -22,11 +22,12 @@ export const generateMetadata = async ({ params }) => {
 
 const formatURL = (str) => {
   return str
-    .toLowerCase()
-    .replace(/[^\w\s-]/g, "")
-    .replace(/\s+/g, "-")
-    .replace(/-+/g, "-")
-    .replace(/^-+|-+$/g, "");
+    .toLowerCase() // Convert to lower case
+    .replace(/[^\w\s.-]/g, "") // Remove all non-word characters except hyphens, spaces, and dots
+    .replace(/\s+/g, "-") // Replace spaces with hyphens
+    .replace(/\./g, "-") // Replace dots with hyphens
+    .replace(/-+/g, "-") // Replace multiple consecutive hyphens with a single hyphen
+    .replace(/^-+|-+$/g, ""); // Remove hyphens from the start and end
 };
 
 
