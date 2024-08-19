@@ -34,9 +34,6 @@ const Category = async ({ params, searchParams }) => {
   const data = await fetchService.getCategory(params.slug, {
     page: searchParams.page,
   });
-  const catData =  await fetchService.getBrand(params.slug, {
-    page: searchParams.page,
-  });
   const brands = data.brands;
   const categories = data.all_categories;
   const products = data.products.data;
