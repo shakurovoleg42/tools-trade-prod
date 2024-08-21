@@ -6,7 +6,7 @@ import { fetchRegionByCode } from "@/utils/regions";
 import fetchService from "@/services/fetchs";
 import ListProducts from "@/blocks/allProducts/ListProducts";
 import Filter from "@/components/Filter/Filter";
-
+import Custom404 from "@/app/[region]/404";
 
 const formatURL = (str) => {
   return str
@@ -19,17 +19,23 @@ const formatURL = (str) => {
 };
 
 export const generateMetadata = async ({ params }) => {
-  const currentRegion = await fetchRegionByCode(params.region);
+  try {
+    const currentRegion = await fetchRegionByCode(params.region);
   const category = await fetchService.getCategory(params.slug);
 
   return {
     title: `Buy ${category.categories.name} at best prices in ${currentRegion.name} ${currentRegion.cities}`,
     description: `Buy ${category.categories.name} at the best price in ${currentRegion.name} ${currentRegion.cities} | ${category.categories.name} Supplier & Reseller`,
   };
+  } catch (error) {
+    <Custom404 />;
+  }
+  
 };
 
 const Category = async ({ params, searchParams }) => {
-  const region = params.region;
+  try {
+    const region = params.region;
 
   const data = await fetchService.getCategory(params.slug, {
     page: searchParams.page,
@@ -61,6 +67,10 @@ const Category = async ({ params, searchParams }) => {
       </div>
     </div>
   );
+  } catch (error) {
+    <Custom404 />;
+  }
+  
 };
 
 export default Category;

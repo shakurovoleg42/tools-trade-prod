@@ -9,15 +9,23 @@ import fetchService from "@/services/fetchs";
 import SimilarProductsSlider from "@/components/SimilarProductsSlider/SimilarProductsSlider";
 import Tabs from "@/components/Tabs/Tabs";
 import Call from "@/components/Call/Call";
+import Custom404 from "@/app/[region]/404";
+import { notFound } from "next/navigation";
+
 
 export const generateMetadata = async ({ params }) => {
-  const currentRegion = await fetchRegionByCode(params.region);
+  try {
+    const currentRegion = await fetchRegionByCode(params.region);
   const product = await fetchService.getProduct(params.slug);
 
   return {
     title: `${product.name} ${product.short_description} supplier in ${currentRegion.name}`,
     description: `Buy ${product.name} ${product.short_description} at best price in ${currentRegion.cities}, ${currentRegion.name} | ${product.brand} Reseller, Dealer and Distributor`,
   };
+  } catch (error) {
+    <Custom404 />;
+  }
+  
 };
 
 const formatURL = (str) => {
@@ -31,7 +39,8 @@ const formatURL = (str) => {
 };
 
 const Product = async ({ params }) => {
-  const region = params.region;
+  try {
+    const region = params.region;
   const currentRegion = await fetchRegionByCode(region);
   const product = await fetchService.getProduct(params.slug);
   const formattedTitle = formatURL(product.name);
@@ -129,7 +138,12 @@ const Product = async ({ params }) => {
         )}
       </div>
     </>
-  );
+    );
+  } catch (error) {
+    return <Custom404 />;
+  }
+  
+  
 };
 
 export default Product;

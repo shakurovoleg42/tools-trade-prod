@@ -3,9 +3,12 @@ import Link from "next/link";
 import { Product } from "@/blocks/allProducts/ListProducts";
 import fetchService from "@/services/fetchs";
 import Header from "@/components/Header";
+import Custom404 from "@/app/[region]/404";
+
 
 const Search = async ({ params, searchParams }) => {
-  const region = params.region;
+  try {
+    const region = params.region;
   const query = searchParams.query;
 
   try {
@@ -50,6 +53,10 @@ const Search = async ({ params, searchParams }) => {
       </section>
     );
   }
+  } catch (error) {
+    <Custom404 />;
+  }
+  
 };
 
 export default Search;

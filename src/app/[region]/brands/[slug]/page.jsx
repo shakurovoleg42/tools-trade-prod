@@ -6,6 +6,7 @@ import { fetchRegionByCode } from "@/utils/regions";
 import fetchService from "@/services/fetchs";
 import ListProducts from "@/blocks/allProducts/ListProducts";
 import Filter from "@/components/Filter/Filter";
+import Custom404 from "@/app/[region]/404";
 
 const formatURL = (str) => {
   return str
@@ -18,17 +19,23 @@ const formatURL = (str) => {
 };
 
 export const generateMetadata = async ({ params }) => {
-  const currentRegion = await fetchRegionByCode(params.region);
+  try {
+     const currentRegion = await fetchRegionByCode(params.region);
   const brand = await fetchService.getBrand(params.slug);
 
   return {
     title: `Buy ${brand.brands.name} products at best prices in ${currentRegion.name} ${currentRegion.cities}`,
     description: `${brand.brands.name} supplier and reseller in ${currentRegion.name} ${currentRegion.cities} | Request a quote at +971 556305217 or inquiry@gulfinstruments.com`,
   };
+  } catch (error) {
+    <Custom404 />;
+  }
+ 
 };
 
 const Brand = async ({ params, searchParams }) => {
-  const region = params.region;
+  try {
+    const region = params.region;
 
   const data = await fetchService.getBrand(params.slug, {
     page: searchParams.page,
@@ -62,6 +69,10 @@ const Brand = async ({ params, searchParams }) => {
       </div>
     </div>
   );
+  } catch (error) {
+    <Custom404 />;
+  }
+  
 };
 
 export default Brand;

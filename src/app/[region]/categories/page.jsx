@@ -1,22 +1,26 @@
 import styles from "@/styles/Categories.module.css";
 
-import Image from "next/image";
 import Link from "next/link";
 import fetchService from "@/services/fetchs";
 import { fetchRegionByCode } from "@/utils/regions";
+import Custom404 from "@/app/[region]/404";
 
 export async function generateMetadata({ params }) {
-  const currentRegion = await fetchRegionByCode(params.region);
+  try {
+    const currentRegion = await fetchRegionByCode(params.region);
   return {
     title: `Industrial Automation & Control Instruments product categories in ${currentRegion.name}| Tools And Trade`,
     description: `More than 100 categories of Industrial Automation & Control Instruments from world manufacturers at the best prices in ${currentRegion.cities}- Tools And Trade`,
   };
+  } catch (error) {
+    <Custom404 />;
+  }
+  
 }
 
-
-
 const Categories = async ({ params }) => {
-  const region = params.region;
+  try {
+    const region = params.region;
   const data = await fetchService.getBigCategories();
   console.log(data);
 
@@ -64,6 +68,10 @@ const Categories = async ({ params }) => {
       </div>
     </div>
   );
+  } catch (error) {
+    <Custom404 />;
+  }
+  
 };
 
 export default Categories;
