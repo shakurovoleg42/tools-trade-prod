@@ -24,6 +24,7 @@ export const Product = ({ product }) => {
   };
 
   return (
+    <a href={`/${region}/products/${product.slug}`}>
     <div className={styles.product}>
       <div className={styles.contmg}>
         <img
@@ -43,9 +44,13 @@ export const Product = ({ product }) => {
         <p>{product.short_description || '*No description*'}</p>
       </div>
       <div className={styles.btn}>
-        <button onClick={handleShowMore}>MORE</button>
+        
+        <button>MORE</button>
+        
+        
       </div>
     </div>
+    </a>
   );
 };
 
