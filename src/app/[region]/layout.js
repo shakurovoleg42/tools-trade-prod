@@ -5,6 +5,7 @@ import { fetchRegions } from "@/utils/regions";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Request from "@/components/Request";
+import Head from "next/head";
 
 export async function generateMetadata() {
   const regions = await fetchRegions();
@@ -13,6 +14,7 @@ export async function generateMetadata() {
 export default function RootLayout({ children, params }) {
   return (
     <html lang="en">
+      <link rel="alternate" hrefLang={params.region} href={`/${params.region}`} />
       <body>
         <NextTopLoader />
         <Header />
