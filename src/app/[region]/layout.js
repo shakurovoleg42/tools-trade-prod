@@ -14,7 +14,8 @@ export async function generateMetadata() {
 export default function RootLayout({ children, params }) {
   return (
     <html lang="en">
-      <link rel="alternate" hrefLang={params.region} href={`/${params.region}`} />
+      <link rel="alternate" hrefLang='x-default' href={`https://toolsandtrade.com/${params.region}`} />
+      <link rel="alternate" hrefLang={`en-${params.region}`} href={`https://toolsandtrade.com/${params.region}`} />
       <body>
         <NextTopLoader />
         <Header />
