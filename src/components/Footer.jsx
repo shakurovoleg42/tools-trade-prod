@@ -2,14 +2,14 @@ import styles from "@/styles/Footer.module.css";
 
 import Link from "next/link";
 
-const Footer = ({ region }) => {
+const Footer = ({ region, logo, phone, mail }) => {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerBox}>
         <div className={styles.logo}>
           <Link href={`/${region}`}>
             <img
-              src="/logo.svg"
+              src={logo}
               draggable="false"
               alt="Footer logo"
             />
@@ -43,15 +43,15 @@ const Footer = ({ region }) => {
               <p className={styles.labelPhone}>Call Us:</p>
               <div>
                 <p>
-                  <Link href="tel:+971 55 630 52 17">+971 55 630 52 17</Link>
+                  <Link href={`tel:${phone}`}>{phone}</Link>
                 </p>
               </div>
             </div>
             <div className={styles.infoBlock}>
               <p className={styles.mailUs}>Mail Us:</p>
               <p>
-                <Link href="mailto:inquiry@gulfinstruments.com">
-                  inquiry@gulfinstruments.com
+                <Link href={`mailto:${mail}`}>
+                  {mail}
                 </Link>
               </p>
             </div>

@@ -69,6 +69,11 @@ const fetchService = {
     const res = await axios.post(process.env.NEXT_URL + "/api/contact", data);
     return res.data;
   },
+
+  getMain: async () => {
+    const res = await axios.get("https://6213-93-188-86-71.ngrok-free.app/api/main");
+    return res.data;
+  },
 };
 
 export default fetchService;

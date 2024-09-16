@@ -10,7 +10,7 @@ import clsx from "clsx";
 import DrawerComponent from "react-modern-drawer";
 import { ToastContainer, toast } from "react-toastify";
 
-const Header = () => {
+const Header = ({logo, mail, phone}) => {
   const [open, setOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
   const [searchValue, setSearchValue] = useState(""); // Добавляем состояние для поиска
@@ -128,13 +128,13 @@ const Header = () => {
         <div className={styles.headerLogo}>
           <Link href={`/${region}`}>
             <img
-              src="/logo.svg"
+              src={logo}
               draggable="false"
               className="hidden md:block"
               alt="Screenshots of the dashboard project showing desktop version"
             />
             <img
-              src="/logo.svg"
+              src={logo}
               style={{ width: "101.69px !important", height: "55.51px !important" }}
               draggable="false"
               className="block md:hidden"
@@ -180,8 +180,8 @@ const Header = () => {
             draggable="false"
             alt="Mail Icon"
           />
-          <Link href="mailto:inquiry@gulfinstruments.com">
-            <span>inquiry@gulfinstruments.com</span>
+          <Link href={`mailto:${mail}`}>
+            <span>{mail}</span>
           </Link>
         </div>
         <div
@@ -219,7 +219,7 @@ const Header = () => {
           </div>
         </div>
         <p className={clsx(styles.phone, { [styles.hidden]: open })}>
-          <Link href="tel:+971556305217">+971 55 630 52 17</Link>
+          <Link href={`tel:${phone}`}>{phone}</Link>
         </p>
       </div>
     </div>
