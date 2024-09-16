@@ -71,7 +71,7 @@ const fetchService = {
   },
 
   getMain: async () => {
-    const res = await axios.get("https://6213-93-188-86-71.ngrok-free.app/api/main");
+    const res = await axios.get(process.env.NEXT_URL + "/api/main");
     return res.data;
   },
 };

@@ -7,7 +7,7 @@ import styles from "@/styles/Request.module.css";
 import { useParams, usePathname } from "next/navigation";
 import Link from "next/link";
 
-const Request = () => {
+const Request = ({email_address}) => {
   const { region } = useParams();
   const pathname = usePathname();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -86,8 +86,8 @@ const Request = () => {
           </div>
           <div className={styles.linkContainer}>
             <p className={styles.linkToMail}>
-              <Link href="mailto:inquiry@gulfinstruments.com">
-                inquiry@gulfinstruments.com
+              <Link href={`mailto:${address}`}>
+                {address}
               </Link>
             </p>
           </div>

@@ -25,8 +25,8 @@ export default async function RootLayout({ children, params }) {
         <NextTopLoader />
         <Header logo={main.logo} phone={main.phone} mail={main.mail}/>
         <main>{children}</main>
-        <Request />
-        <Footer region={params.region} logo={main.logo} phone={main.phone} mail={main.mail}/>
+        <Request address={main.email_address}/>
+        <Footer region={params.region} logo={main.logo} phone={main.phone} mail={main.mail} address={main.address}/>
       </body>
     </html>
   );

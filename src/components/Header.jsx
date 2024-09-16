@@ -128,13 +128,13 @@ const Header = ({logo, mail, phone}) => {
         <div className={styles.headerLogo}>
           <Link href={`/${region}`}>
             <img
-              src={logo}
+              src='/logo.svg'
               draggable="false"
               className="hidden md:block"
               alt="Screenshots of the dashboard project showing desktop version"
             />
             <img
-              src={logo}
+              src='/logo.svg'
               style={{ width: "101.69px !important", height: "55.51px !important" }}
               draggable="false"
               className="block md:hidden"

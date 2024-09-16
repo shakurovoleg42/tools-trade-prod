@@ -2,14 +2,14 @@ import styles from "@/styles/Footer.module.css";
 
 import Link from "next/link";
 
-const Footer = ({ region, logo, phone, mail }) => {
+const Footer = ({ region, logo, phone, mail, address }) => {
   return (
     <div className={styles.footerContainer}>
       <div className={styles.footerBox}>
         <div className={styles.logo}>
           <Link href={`/${region}`}>
             <img
-              src={logo}
+              src='/logo.svg'
               draggable="false"
               alt="Footer logo"
             />
@@ -37,7 +37,7 @@ const Footer = ({ region, logo, phone, mail }) => {
           <div className={styles.information}>
             <div className={styles.infoBlock}>
               <p className={styles.label}>Address:</p>
-              <p>Shop # 85 Nakheel Center, Deira Dubai</p>
+              <p>{address}</p>
             </div>
             <div className={styles.infoBlock}>
               <p className={styles.labelPhone}>Call Us:</p>
