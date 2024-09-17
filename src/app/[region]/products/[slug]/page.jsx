@@ -11,6 +11,7 @@ import Tabs from "@/components/Tabs/Tabs";
 import Call from "@/components/Call/Call";
 import Custom404 from "@/app/[region]/404";
 import { notFound } from "next/navigation";
+import { format } from "sharp";
 
 
 export const generateMetadata = async ({ params }) => {
@@ -28,15 +29,15 @@ export const generateMetadata = async ({ params }) => {
   
 };
 
-// const formatURL = (str) => {
-//   return str
-//     .toLowerCase() // Convert to lower case
-//     .replace(/[^\w\s.-]/g, "") // Remove all non-word characters except hyphens, spaces, and dots
-//     .replace(/\s+/g, "-") // Replace spaces with hyphens
-//     .replace(/\./g, "-") // Replace dots with hyphens
-//     .replace(/-+/g, "-") // Replace multiple consecutive hyphens with a single hyphen
-//     .replace(/^-+|-+$/g, ""); // Remove hyphens from the start and end
-// };
+const formatURL = (str) => {
+  return str
+    .toLowerCase() // Преобразуем в нижний регистр
+    .replace(/[^\w\s.-]/g, "") // Убираем все не-слово символы, кроме дефисов, пробелов и точек
+    .replace(/\s+/g, "-") // Заменяем пробелы на дефисы
+    .replace(/\//g, "-") // Заменяем слэши на дефисы
+    .replace(/-+/g, "-") // Заменяем множественные дефисы на один
+    .replace(/^-+|-+$/g, ""); // Убираем дефисы в начале и конце
+};
 
 const Product = async ({ params }) => {
   try {
@@ -51,7 +52,7 @@ const Product = async ({ params }) => {
   return (
     <>
       <div className={styles.container}>
-        <link rel="canonical" href={`/${region}/products/${product.name}`} />
+        <link rel="canonical" href={`/${region}/products/${params.slug}`} />
         {product && (
           <div className={styles.containerProduct}>
             <div className={styles.href}>
