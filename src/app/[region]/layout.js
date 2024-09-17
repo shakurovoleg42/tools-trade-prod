@@ -129,12 +129,11 @@ export default async function RootLayout({ children, params }) {
       />
       <body>
         <NextTopLoader />
-        <Header logo={main.logo} phone={main.phone} mail={main.mail} />
+        <Header phone={main.phone} mail={main.mail} />
         <main>{children}</main>
         <Request address={main.email_address} />
         <Footer
           region={params.region}
-          logo={main.logo}
           phone={main.phone}
           mail={main.mail}
           address={main.address}
