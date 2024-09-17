@@ -7,7 +7,7 @@ import styles from "@/styles/Request.module.css";
 import { useParams, usePathname } from "next/navigation";
 import Link from "next/link";
 
-const Request = ({email_address}) => {
+const Request = ({email_address, address}) => {
   const { region } = useParams();
   const pathname = usePathname();
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -81,7 +81,7 @@ const Request = ({email_address}) => {
           </div>
           <div className={styles.contactTextSecondContainer}>
             <p className={styles.contactTextSecond}>
-              <strong>Tools & Trade</strong> Shop # 85 Nakheel Center, Deira Dubai
+              <strong>Tools & Trade</strong> {address}
             </p>
           </div>
           <div className={styles.linkContainer}>

@@ -71,7 +71,7 @@ const fetchService = {
   },
 
   getMain: async () => {
-    const res = await axios.get(process.env.NEXT_URL + "/api/main");
+    const res = await axios.get("https://api.toolsandtrade.com/api/main");
     return res.data;
   },
 };

@@ -131,7 +131,7 @@ export default async function RootLayout({ children, params }) {
         <NextTopLoader />
         <Header phone={main.phone} mail={main.mail} />
         <main>{children}</main>
-        <Request email_address={main.email_address} />
+        <Request email_address={main.email_address} address={main.address}/>
         <Footer
           region={params.region}
           phone={main.phone}
