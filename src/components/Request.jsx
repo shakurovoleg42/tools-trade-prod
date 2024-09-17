@@ -86,8 +86,8 @@ const Request = ({email_address}) => {
           </div>
           <div className={styles.linkContainer}>
             <p className={styles.linkToMail}>
-              <Link href={`mailto:${address}`}>
-                {address}
+              <Link href={`mailto:${email_address}`}>
+                {email_address}
               </Link>
             </p>
           </div>
