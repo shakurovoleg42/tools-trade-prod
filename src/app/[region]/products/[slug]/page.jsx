@@ -28,15 +28,15 @@ export const generateMetadata = async ({ params }) => {
   
 };
 
-const formatURL = (str) => {
-  return str
-    .toLowerCase() // Convert to lower case
-    .replace(/[^\w\s.-]/g, "") // Remove all non-word characters except hyphens, spaces, and dots
-    .replace(/\s+/g, "-") // Replace spaces with hyphens
-    .replace(/\./g, "-") // Replace dots with hyphens
-    .replace(/-+/g, "-") // Replace multiple consecutive hyphens with a single hyphen
-    .replace(/^-+|-+$/g, ""); // Remove hyphens from the start and end
-};
+// const formatURL = (str) => {
+//   return str
+//     .toLowerCase() // Convert to lower case
+//     .replace(/[^\w\s.-]/g, "") // Remove all non-word characters except hyphens, spaces, and dots
+//     .replace(/\s+/g, "-") // Replace spaces with hyphens
+//     .replace(/\./g, "-") // Replace dots with hyphens
+//     .replace(/-+/g, "-") // Replace multiple consecutive hyphens with a single hyphen
+//     .replace(/^-+|-+$/g, ""); // Remove hyphens from the start and end
+// };
 
 const Product = async ({ params }) => {
   try {
@@ -51,7 +51,7 @@ const Product = async ({ params }) => {
   return (
     <>
       <div className={styles.container}>
-        <link rel="canonical" href={`/${region}/products/${formattedTitle}`} />
+        <link rel="canonical" href={`/${region}/products/${product.name}`} />
         {product && (
           <div className={styles.containerProduct}>
             <div className={styles.href}>
